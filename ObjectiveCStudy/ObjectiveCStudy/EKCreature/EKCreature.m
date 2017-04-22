@@ -24,7 +24,7 @@
         self.age = arc4random_uniform(100);
         self.gender = arc4random_uniform(2);
         self.weight = arc4random_uniform(100);
-        self.name = [NSString stringWithFormat:@"id name: %d", arc4random()];
+        self.name = [NSString stringWithFormat:@"My name-id is: %u", arc4random()];
         self.mutableChildren = [NSMutableArray array];
     }
     return self;
@@ -39,7 +39,7 @@
 }
 
 - (EKCreature *)birth{
-    NSLog(@"Was born ne child.");
+    NSLog(@"Was born new child.");
     return [[[EKCreature alloc] init] autorelease];
 }
 
@@ -52,7 +52,7 @@
 }
 
 - (void)sayHello{
-    NSLog(@"Hello");
+    NSLog(@"Hello, %@", self.name);
     if ([self.mutableChildren count] != 0)
         for (EKCreature *child in self.children) {
             [child sayHello];

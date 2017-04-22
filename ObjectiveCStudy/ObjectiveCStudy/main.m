@@ -32,7 +32,6 @@ int main(int argc, const char * argv[]) {
                 [creature birth];
             }
         }
-        
     }
     return 0;
 }
