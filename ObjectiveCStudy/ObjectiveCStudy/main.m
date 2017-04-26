@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "EKCreature.h"
+#import "EKCreatureMale.h"
+#import "EKCreatureFemale.h"
 
 static const NSUInteger kEKCreatureCount = 3;
 static const NSUInteger kEKCreatureChildrenCount = 3;
@@ -25,15 +27,6 @@ int main(int argc, const char * argv[]) {
             [array addObject:creature];
         }
         
-        for (EKCreature *creature in array) {
-            [creature sayHello];
-            if (creature.gender == EKCreatureGenderMale) {
-                [creature fight];
-            } else {
-                [creature giveBirth];
-            }
-        }
-        
         EKCreature *creature = [[EKCreature new] autorelease];
         NSMutableArray *mutableArrayOfChildren = [[NSMutableArray new] autorelease];
         for (NSUInteger i = 0; i < kEKCreatureCount; i++) {
@@ -47,6 +40,10 @@ int main(int argc, const char * argv[]) {
         [creature removeChildren:mutableArrayOfChildren];
         NSLog(@"~~~~~~~~~~~~~~~~~~~~~~");
         [creature sayHello];
+        EKCreatureMale *creatureMale = [[EKCreatureMale new] autorelease];
+        [creatureMale performGenderSpecificOperation];
+        EKCreatureFemale *creatureFemale = [[EKCreatureFemale new] autorelease];
+        [creatureFemale performGenderSpecificOperation];
     }
     return 0;
 }

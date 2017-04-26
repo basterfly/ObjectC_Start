@@ -1,15 +1,15 @@
 //
-//  EKCreatureTests.h
+//  EKCreatureMale.h
 //  ObjectiveCStudy
 //
 //  Created by Egor on 22.04.17.
 //  Copyright © 2017 Yegor Kozlovskiy. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "EKCreature.h"
 
-@interface EKCreatureTests : NSObject
+@interface EKCreatureMale : EKCreature
 
-
+- (void)performGenderSpecificOperation;
 
 @end

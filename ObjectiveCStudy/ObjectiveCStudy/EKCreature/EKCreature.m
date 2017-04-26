@@ -9,11 +9,8 @@
 #import "EKCreature.h"
 #import "EKRandom.h"
 
-static const NSString *kEKPrintStringFight = @"Fight!";
 static const NSString *kEKPrintStringMyNameIdIs = @"My name-id is:";
 static const NSString *kEKPrintStringHello = @"Hello!";
-static const NSString *kEKPrintStringWasBorn = @"Was born new child.";
-
 
 @interface EKCreature ()
 @property (nonatomic, retain) NSMutableArray *mutableChildren;
@@ -38,21 +35,11 @@ static const NSString *kEKPrintStringWasBorn = @"Was born new child.";
 - (instancetype)init {
     self = [super init];
     self.age = EKRandom(NSMakeRange(1, 80));
-    self.gender = EKRandom(NSMakeRange(0, 2));
     self.weight = EKRandom(NSMakeRange(10, 60));
     self.name = [NSString stringWithFormat:@"%@ %lu", kEKPrintStringMyNameIdIs, EKRandom(NSMakeRange(111111, 111111))];
     self.mutableChildren = [NSMutableArray array];
     
     return self;
-}
-
-- (void)fight{
-    NSLog(@"%@", kEKPrintStringFight);
-}
-
-- (EKCreature *)giveBirth{
-    NSLog(@"%@", kEKPrintStringWasBorn);
-    return [[[EKCreature alloc] init] autorelease];
 }
 
 - (void)addChild:(EKCreature *)child {
@@ -78,6 +65,10 @@ static const NSString *kEKPrintStringWasBorn = @"Was born new child.";
 
 - (void)removeChildren:(NSArray *)children {
     [self.mutableChildren removeObjectsInArray:_mutableChildren];
+}
+
+- (void)performGenderSpecificOperation {
+    
 }
 
 @end
