@@ -9,13 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "EKCreature.h"
 
+static const NSUInteger kEKCreatureCount = 3;
+static const NSUInteger kEKCreatureChildrenCount = 3;
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-       
         NSMutableArray *array = [NSMutableArray array];
-        for (int index = 0; index < 9; index++) {
-            EKCreature *creature = [[EKCreature new] autorelease];
-            for (int index = 0; index < 2; index++) {
+        for (int index = 0; index < kEKCreatureCount; index++) {
+            EKCreature *creature = [[[EKCreature alloc] init] autorelease];
+            for (int index = 0; index < kEKCreatureChildrenCount; index++) {
                 EKCreature *child = [[EKCreature new] autorelease];
                 [creature addChild:child];
             }
@@ -23,15 +25,28 @@ int main(int argc, const char * argv[]) {
             [array addObject:creature];
         }
         
-        
         for (EKCreature *creature in array) {
             [creature sayHello];
-            if(creature.gender == EKCreatureGenderMale) {
+            if (creature.gender == EKCreatureGenderMale) {
                 [creature fight];
             } else {
-                [creature birth];
+                [creature giveBirth];
             }
         }
+        
+        EKCreature *creature = [[EKCreature new] autorelease];
+        NSMutableArray *mutableArrayOfChildren = [[NSMutableArray new] autorelease];
+        for (NSUInteger i = 0; i < kEKCreatureCount; i++) {
+            EKCreature *creature = [[EKCreature new] autorelease];
+            [mutableArrayOfChildren addObject:creature];
+        }
+        
+        [creature addChildren:mutableArrayOfChildren];
+        NSLog(@"~~~~~~~~~~~~~~~~~~~~~~");
+        [creature sayHello];
+        [creature removeChildren:mutableArrayOfChildren];
+        NSLog(@"~~~~~~~~~~~~~~~~~~~~~~");
+        [creature sayHello];
     }
     return 0;
 }

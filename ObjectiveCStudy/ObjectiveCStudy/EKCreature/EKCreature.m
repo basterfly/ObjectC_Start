@@ -7,9 +7,17 @@
 //
 
 #import "EKCreature.h"
+#import "EKRandom.h"
+
+static const NSString *kEKPrintStringFight = @"Fight!";
+static const NSString *kEKPrintStringMyNameIdIs = @"My name-id is:";
+static const NSString *kEKPrintStringHello = @"Hello!";
+static const NSString *kEKPrintStringWasBorn = @"Was born new child.";
+
 
 @interface EKCreature ()
 @property (nonatomic, retain) NSMutableArray *mutableChildren;
+@property (nonatomic, copy)   NSString       *name;
 
 @end
 
@@ -17,46 +25,59 @@
 
 @dynamic children;
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        self.age = arc4random_uniform(100);
-        self.gender = arc4random_uniform(2);
-        self.weight = arc4random_uniform(100);
-        self.name = [NSString stringWithFormat:@"My name-id is: %u", arc4random()];
-        self.mutableChildren = [NSMutableArray array];
-    }
-    return self;
-}
-
 - (NSArray *)children {
     return [[self.mutableChildren copy] autorelease];
 }
 
-- (void)fight{
-    NSLog(@"Fight!");
+- (void)dealloc {
+    self.name = nil;
+    self.mutableChildren = nil;
+    [super dealloc];
 }
 
-- (EKCreature *)birth{
-    NSLog(@"Was born new child.");
+- (instancetype)init {
+    self = [super init];
+    self.age = EKRandom(NSMakeRange(1, 80));
+    self.gender = EKRandom(NSMakeRange(0, 2));
+    self.weight = EKRandom(NSMakeRange(10, 60));
+    self.name = [NSString stringWithFormat:@"%@ %lu", kEKPrintStringMyNameIdIs, EKRandom(NSMakeRange(111111, 111111))];
+    self.mutableChildren = [NSMutableArray array];
+    
+    return self;
+}
+
+- (void)fight{
+    NSLog(@"%@", kEKPrintStringFight);
+}
+
+- (EKCreature *)giveBirth{
+    NSLog(@"%@", kEKPrintStringWasBorn);
     return [[[EKCreature alloc] init] autorelease];
 }
 
-- (void)addChild:(EKCreature*)child{
-    [self.mutableChildren addObject:child];
+- (void)addChild:(EKCreature *)child {
+    if (0 != child) {
+        [self.mutableChildren addObject:child];
+    }
 }
 
-- (void)removeChild:(EKCreature*)child{
+- (void)removeChild:(EKCreature *)child {
     [self.mutableChildren removeObject:child];
 }
 
-- (void)sayHello{
-    NSLog(@"Hello, %@", self.name);
-    if ([self.mutableChildren count] != 0)
-        for (EKCreature *child in self.children) {
-            [child sayHello];
-        }
+- (void)sayHello {
+    NSLog(@"%@, %@ weight: %f, age: %lu", kEKPrintStringHello, self.name, self.weight, (unsigned long)self.age);
+    for (EKCreature *child in self.children) {
+    [child sayHello];
+    }
+}
+
+- (void)addChildren:(NSArray *)children {
+    [self.mutableChildren addObjectsFromArray:children];
+}
+
+- (void)removeChildren:(NSArray *)children {
+    [self.mutableChildren removeObjectsInArray:_mutableChildren];
 }
 
 @end
