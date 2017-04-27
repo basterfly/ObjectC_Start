@@ -13,6 +13,7 @@
 
 static const NSUInteger kEKCreatureCount = 3;
 static const NSUInteger kEKCreatureChildrenCount = 3;
+static const NSUInteger kEKCreatureGenderCount = 7;
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -48,15 +49,15 @@ int main(int argc, const char * argv[]) {
         [creatureFemale performGenderSpecificOperation];
         NSLog(@"~~~~~~~~~~~~~~~~~~~~~~");
         NSMutableArray *arrayWithBothCreatures = [[NSMutableArray new] autorelease];
-        for (NSUInteger i = 0; i < 7; i++) {
+        for (NSUInteger i = 0; i < kEKCreatureGenderCount; i++) {
             EKCreatureFemale *creatureFemale = [[EKCreatureFemale new] autorelease];
             EKCreatureMale *creatureMale = [[EKCreatureMale new] autorelease];
             [arrayWithBothCreatures addObject:creatureMale];
             [arrayWithBothCreatures addObject:creatureFemale];
         }
         
-        for (NSUInteger i = 0; i < [arrayWithBothCreatures count]; i++) {
-            [[arrayWithBothCreatures objectAtIndex:i] performGenderSpecificOperation];
+        for (EKCreature *creature in arrayWithBothCreatures) {
+            [creature performGenderSpecificOperation];
         }
     }
     return 0;
