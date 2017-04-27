@@ -69,6 +69,7 @@
 		45C97E8F1EAA91F00039F373 /* ObjectiveCStudy */ = {
 			isa = PBXGroup;
 			children = (
+				45F78E401EB2352D00E1C849 /* Category */,
 				45F3627E1EAB5181003CFF39 /* EKCreatureFemale */,
 				45F3627A1EAB513F003CFF39 /* EKCreatureMale */,
 				45C97E971EAA92B10039F373 /* EKCreature */,
@@ -104,6 +105,13 @@
 				45F362801EAB51BA003CFF39 /* EKCreatureFemale.m */,
 			);
 			path = EKCreatureFemale;
+			sourceTree = "<group>";
+		};
+		45F78E401EB2352D00E1C849 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

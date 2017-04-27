@@ -41,9 +41,23 @@ int main(int argc, const char * argv[]) {
         NSLog(@"~~~~~~~~~~~~~~~~~~~~~~");
         [creature sayHello];
         EKCreatureMale *creatureMale = [[EKCreatureMale new] autorelease];
+        [creatureMale sayHello];
         [creatureMale performGenderSpecificOperation];
         EKCreatureFemale *creatureFemale = [[EKCreatureFemale new] autorelease];
+        [creatureFemale sayHello];
         [creatureFemale performGenderSpecificOperation];
+        NSLog(@"~~~~~~~~~~~~~~~~~~~~~~");
+        NSMutableArray *arrayWithBothCreatures = [[NSMutableArray new] autorelease];
+        for (NSUInteger i = 0; i < 7; i++) {
+            EKCreatureFemale *creatureFemale = [[EKCreatureFemale new] autorelease];
+            EKCreatureMale *creatureMale = [[EKCreatureMale new] autorelease];
+            [arrayWithBothCreatures addObject:creatureMale];
+            [arrayWithBothCreatures addObject:creatureFemale];
+        }
+        
+        for (NSUInteger i = 0; i < [arrayWithBothCreatures count]; i++) {
+            [[arrayWithBothCreatures objectAtIndex:i] performGenderSpecificOperation];
+        }
     }
     return 0;
 }

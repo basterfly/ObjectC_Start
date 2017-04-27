@@ -10,6 +10,4 @@
 
 @interface EKCreatureFemale : EKCreature
 
-- (void)performGenderSpecificOperation;
-
 @end
