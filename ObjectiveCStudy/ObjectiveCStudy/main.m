@@ -7,58 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EKCreature.h"
-#import "EKCreatureMale.h"
-#import "EKCreatureFemale.h"
-
-static const NSUInteger kEKCreatureCount = 3;
-static const NSUInteger kEKCreatureChildrenCount = 3;
-static const NSUInteger kEKCreatureGenderCount = 7;
+#import "EKTests.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        NSMutableArray *array = [NSMutableArray array];
-        for (int index = 0; index < kEKCreatureCount; index++) {
-            EKCreature *creature = [[[EKCreature alloc] init] autorelease];
-            for (int index = 0; index < kEKCreatureChildrenCount; index++) {
-                EKCreature *child = [[EKCreature new] autorelease];
-                [creature addChild:child];
-            }
-            
-            [array addObject:creature];
-        }
-        
-        EKCreature *creature = [[EKCreature new] autorelease];
-        NSMutableArray *mutableArrayOfChildren = [[NSMutableArray new] autorelease];
-        for (NSUInteger i = 0; i < kEKCreatureCount; i++) {
-            EKCreature *creature = [[EKCreature new] autorelease];
-            [mutableArrayOfChildren addObject:creature];
-        }
-        
-        [creature addChildren:mutableArrayOfChildren];
-        NSLog(@"~~~~~~~~~~~~~~~~~~~~~~");
-        [creature sayHello];
-        [creature removeChildren:mutableArrayOfChildren];
-        NSLog(@"~~~~~~~~~~~~~~~~~~~~~~");
-        [creature sayHello];
-        EKCreatureMale *creatureMale = [[EKCreatureMale new] autorelease];
-        [creatureMale sayHello];
-        [creatureMale performGenderSpecificOperation];
-        EKCreatureFemale *creatureFemale = [[EKCreatureFemale new] autorelease];
-        [creatureFemale sayHello];
-        [creatureFemale performGenderSpecificOperation];
-        NSLog(@"~~~~~~~~~~~~~~~~~~~~~~");
-        NSMutableArray *arrayWithBothCreatures = [[NSMutableArray new] autorelease];
-        for (NSUInteger i = 0; i < kEKCreatureGenderCount; i++) {
-            EKCreatureFemale *creatureFemale = [[EKCreatureFemale new] autorelease];
-            EKCreatureMale *creatureMale = [[EKCreatureMale new] autorelease];
-            [arrayWithBothCreatures addObject:creatureMale];
-            [arrayWithBothCreatures addObject:creatureFemale];
-        }
-        
-        for (EKCreature *creature in arrayWithBothCreatures) {
-            [creature performGenderSpecificOperation];
-        }
+        [EKTests creatureTests];
     }
+    
     return 0;
 }
