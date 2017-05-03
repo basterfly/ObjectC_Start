@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		458CD4C61EB9FB6F003DE3B8 /* EKWasher.m in Sources */ = {isa = PBXBuildFile; fileRef = 458CD4C51EB9FB6F003DE3B8 /* EKWasher.m */; };
+		458CD4C91EBA4288003DE3B8 /* EKRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 458CD4C81EBA4288003DE3B8 /* EKRoom.m */; };
+		458CD4CC1EBA5440003DE3B8 /* EKAccountant.m in Sources */ = {isa = PBXBuildFile; fileRef = 458CD4CB1EBA5440003DE3B8 /* EKAccountant.m */; };
+		458CD4CF1EBA5473003DE3B8 /* EKDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 458CD4CE1EBA5473003DE3B8 /* EKDirector.m */; };
 		45C97E911EAA91F00039F373 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C97E901EAA91F00039F373 /* main.m */; };
 		45C97E9A1EAA93990039F373 /* EKCreature.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C97E991EAA93990039F373 /* EKCreature.m */; };
 		45F3627D1EAB517B003CFF39 /* EKCreatureMale.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F3627C1EAB517B003CFF39 /* EKCreatureMale.m */; };
@@ -15,8 +19,9 @@
 		45F78E431EB2396F00E1C849 /* NSObject+EKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F78E421EB2396F00E1C849 /* NSObject+EKCategory.m */; };
 		45F78E471EB280BD00E1C849 /* EKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F78E461EB280BD00E1C849 /* EKTests.m */; };
 		45F78E4B1EB354D300E1C849 /* EKCarWash.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F78E4A1EB354D300E1C849 /* EKCarWash.m */; };
-		45F78E4F1EB358E600E1C849 /* EKBuildings.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F78E4E1EB358E600E1C849 /* EKBuildings.m */; };
-		45F78E541EB3609500E1C849 /* EKWorkers.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F78E531EB3609500E1C849 /* EKWorkers.m */; };
+		45F78E5B1EB9DB8200E1C849 /* EKBuilding.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F78E5A1EB9DB8200E1C849 /* EKBuilding.m */; };
+		45F78E601EB9DC9E00E1C849 /* EKWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F78E5F1EB9DC9E00E1C849 /* EKWorker.m */; };
+		45F78E661EB9E03500E1C849 /* EKCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F78E651EB9E03500E1C849 /* EKCar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +37,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		458CD4C41EB9FB6F003DE3B8 /* EKWasher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKWasher.h; sourceTree = "<group>"; };
+		458CD4C51EB9FB6F003DE3B8 /* EKWasher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKWasher.m; sourceTree = "<group>"; };
+		458CD4C71EBA4288003DE3B8 /* EKRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKRoom.h; sourceTree = "<group>"; };
+		458CD4C81EBA4288003DE3B8 /* EKRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKRoom.m; sourceTree = "<group>"; };
+		458CD4CA1EBA5440003DE3B8 /* EKAccountant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKAccountant.h; sourceTree = "<group>"; };
+		458CD4CB1EBA5440003DE3B8 /* EKAccountant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKAccountant.m; sourceTree = "<group>"; };
+		458CD4CD1EBA5473003DE3B8 /* EKDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKDirector.h; sourceTree = "<group>"; };
+		458CD4CE1EBA5473003DE3B8 /* EKDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKDirector.m; sourceTree = "<group>"; };
 		45C97E8D1EAA91F00039F373 /* ObjectiveCStudy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ObjectiveCStudy; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C97E901EAA91F00039F373 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		45C97E981EAA93990039F373 /* EKCreature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKCreature.h; sourceTree = "<group>"; };
@@ -48,10 +61,12 @@
 		45F78E461EB280BD00E1C849 /* EKTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKTests.m; sourceTree = "<group>"; };
 		45F78E491EB354D300E1C849 /* EKCarWash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKCarWash.h; sourceTree = "<group>"; };
 		45F78E4A1EB354D300E1C849 /* EKCarWash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKCarWash.m; sourceTree = "<group>"; };
-		45F78E4D1EB358E600E1C849 /* EKBuildings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKBuildings.h; sourceTree = "<group>"; };
-		45F78E4E1EB358E600E1C849 /* EKBuildings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKBuildings.m; sourceTree = "<group>"; };
-		45F78E521EB3609500E1C849 /* EKWorkers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKWorkers.h; sourceTree = "<group>"; };
-		45F78E531EB3609500E1C849 /* EKWorkers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKWorkers.m; sourceTree = "<group>"; };
+		45F78E591EB9DB8200E1C849 /* EKBuilding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKBuilding.h; sourceTree = "<group>"; };
+		45F78E5A1EB9DB8200E1C849 /* EKBuilding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKBuilding.m; sourceTree = "<group>"; };
+		45F78E5E1EB9DC9E00E1C849 /* EKWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKWorker.h; sourceTree = "<group>"; };
+		45F78E5F1EB9DC9E00E1C849 /* EKWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKWorker.m; sourceTree = "<group>"; };
+		45F78E641EB9E03500E1C849 /* EKCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKCar.h; sourceTree = "<group>"; };
+		45F78E651EB9E03500E1C849 /* EKCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKCar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,62 +160,83 @@
 		45F78E481EB3546700E1C849 /* EKCarWash */ = {
 			isa = PBXGroup;
 			children = (
-				45F78E511EB3592600E1C849 /* EKWorkers */,
-				45F78E501EB358F800E1C849 /* EKRooms */,
-				45F78E4C1EB357E000E1C849 /* EKBuildings */,
+				45F78E621EB9DFED00E1C849 /* EKCar */,
+				45F78E5D1EB9DC5A00E1C849 /* EKWorker */,
+				45F78E5C1EB9DC0000E1C849 /* EKRoom */,
+				45F78E581EB9DB3F00E1C849 /* EKBuilding */,
 				45F78E491EB354D300E1C849 /* EKCarWash.h */,
 				45F78E4A1EB354D300E1C849 /* EKCarWash.m */,
 			);
 			path = EKCarWash;
 			sourceTree = "<group>";
 		};
-		45F78E4C1EB357E000E1C849 /* EKBuildings */ = {
+		45F78E551EB366B500E1C849 /* EKWasher */ = {
 			isa = PBXGroup;
 			children = (
-				45F78E4D1EB358E600E1C849 /* EKBuildings.h */,
-				45F78E4E1EB358E600E1C849 /* EKBuildings.m */,
+				458CD4C41EB9FB6F003DE3B8 /* EKWasher.h */,
+				458CD4C51EB9FB6F003DE3B8 /* EKWasher.m */,
 			);
-			path = EKBuildings;
-			sourceTree = "<group>";
+			name = EKWasher;
+			path = ObjectiveCStudy/EKCarWash/EKWorker/EKWasher;
+			sourceTree = SOURCE_ROOT;
 		};
-		45F78E501EB358F800E1C849 /* EKRooms */ = {
+		45F78E561EB3F8EA00E1C849 /* EKAccountant */ = {
 			isa = PBXGroup;
 			children = (
+				458CD4CA1EBA5440003DE3B8 /* EKAccountant.h */,
+				458CD4CB1EBA5440003DE3B8 /* EKAccountant.m */,
 			);
-			path = EKRooms;
+			name = EKAccountant;
+			path = ObjectiveCStudy/EKCarWash/EKWorker/EKAccountant;
+			sourceTree = SOURCE_ROOT;
+		};
+		45F78E571EB3FA0E00E1C849 /* EKDirector */ = {
+			isa = PBXGroup;
+			children = (
+				458CD4CD1EBA5473003DE3B8 /* EKDirector.h */,
+				458CD4CE1EBA5473003DE3B8 /* EKDirector.m */,
+			);
+			name = EKDirector;
+			path = ObjectiveCStudy/EKCarWash/EKWorker/EKDirector;
+			sourceTree = SOURCE_ROOT;
+		};
+		45F78E581EB9DB3F00E1C849 /* EKBuilding */ = {
+			isa = PBXGroup;
+			children = (
+				45F78E591EB9DB8200E1C849 /* EKBuilding.h */,
+				45F78E5A1EB9DB8200E1C849 /* EKBuilding.m */,
+			);
+			path = EKBuilding;
 			sourceTree = "<group>";
 		};
-		45F78E511EB3592600E1C849 /* EKWorkers */ = {
+		45F78E5C1EB9DC0000E1C849 /* EKRoom */ = {
+			isa = PBXGroup;
+			children = (
+				458CD4C71EBA4288003DE3B8 /* EKRoom.h */,
+				458CD4C81EBA4288003DE3B8 /* EKRoom.m */,
+			);
+			path = EKRoom;
+			sourceTree = "<group>";
+		};
+		45F78E5D1EB9DC5A00E1C849 /* EKWorker */ = {
 			isa = PBXGroup;
 			children = (
 				45F78E571EB3FA0E00E1C849 /* EKDirector */,
 				45F78E561EB3F8EA00E1C849 /* EKAccountant */,
 				45F78E551EB366B500E1C849 /* EKWasher */,
-				45F78E521EB3609500E1C849 /* EKWorkers.h */,
-				45F78E531EB3609500E1C849 /* EKWorkers.m */,
+				45F78E5E1EB9DC9E00E1C849 /* EKWorker.h */,
+				45F78E5F1EB9DC9E00E1C849 /* EKWorker.m */,
 			);
-			path = EKWorkers;
+			path = EKWorker;
 			sourceTree = "<group>";
 		};
-		45F78E551EB366B500E1C849 /* EKWasher */ = {
+		45F78E621EB9DFED00E1C849 /* EKCar */ = {
 			isa = PBXGroup;
 			children = (
+				45F78E641EB9E03500E1C849 /* EKCar.h */,
+				45F78E651EB9E03500E1C849 /* EKCar.m */,
 			);
-			path = EKWasher;
-			sourceTree = "<group>";
-		};
-		45F78E561EB3F8EA00E1C849 /* EKAccountant */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = EKAccountant;
-			sourceTree = "<group>";
-		};
-		45F78E571EB3FA0E00E1C849 /* EKDirector */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = EKDirector;
+			path = EKCar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,16 +296,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45F78E4F1EB358E600E1C849 /* EKBuildings.m in Sources */,
 				45F78E471EB280BD00E1C849 /* EKTests.m in Sources */,
+				458CD4CC1EBA5440003DE3B8 /* EKAccountant.m in Sources */,
 				45C97E9A1EAA93990039F373 /* EKCreature.m in Sources */,
-				45F78E541EB3609500E1C849 /* EKWorkers.m in Sources */,
+				45F78E661EB9E03500E1C849 /* EKCar.m in Sources */,
+				45F78E5B1EB9DB8200E1C849 /* EKBuilding.m in Sources */,
 				45F78E431EB2396F00E1C849 /* NSObject+EKCategory.m in Sources */,
+				458CD4C91EBA4288003DE3B8 /* EKRoom.m in Sources */,
 				45F3627D1EAB517B003CFF39 /* EKCreatureMale.m in Sources */,
 				45C97E911EAA91F00039F373 /* main.m in Sources */,
 				45F78E221EAEA24200E1C849 /* EKRandom.m in Sources */,
 				45F362811EAB51BA003CFF39 /* EKCreatureFemale.m in Sources */,
+				45F78E601EB9DC9E00E1C849 /* EKWorker.m in Sources */,
 				45F78E4B1EB354D300E1C849 /* EKCarWash.m in Sources */,
+				458CD4C61EB9FB6F003DE3B8 /* EKWasher.m in Sources */,
+				458CD4CF1EBA5473003DE3B8 /* EKDirector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
