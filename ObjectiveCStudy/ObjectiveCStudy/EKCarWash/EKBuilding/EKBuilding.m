@@ -9,8 +9,7 @@
 #import "EKBuilding.h"
 
 @interface EKBuilding ()
-
-@property (nonatomic, retain) NSMutableArray *mutableRoom;
+@property (nonatomic, retain) NSMutableArray *mutableRooms;
 
 @end
 
@@ -19,23 +18,31 @@
 @dynamic rooms;
 
 - (NSArray *)rooms {
-    return [[self.mutableRoom copy] autorelease];
+    
+    return [[self.mutableRooms copy] autorelease];
 }
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
-    self.mutableRoom = [NSMutableArray array];
+    self.mutableRooms = [NSMutableArray array];
+    
     return self;
 }
 
+- (void)dealloc {
+    self.mutableRooms = nil;
+    [super dealloc];
+}
+
 - (void)addRoom:(EKRoom *)room {
-    [self.mutableRoom addObject:room];
+    if (0 != room) {
+    [self.mutableRooms addObject:room];
     NSLog(@"room was added");
+    }
 }
 
 - (void)removeRoom:(EKRoom *)room {
-    [self.mutableRoom removeObject:room];
+    [self.mutableRooms removeObject:room];
     NSLog(@"room was removed");
 }
 

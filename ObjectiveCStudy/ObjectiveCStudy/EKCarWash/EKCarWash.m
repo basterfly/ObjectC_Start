@@ -9,50 +9,61 @@
 #import "EKCarWash.h"
 
 @interface EKCarWash ()
-
-@property (nonatomic, retain) NSMutableArray *mutableCar;
-@property (nonatomic, retain) NSMutableArray *mutableBuilding;
+@property (nonatomic, retain) NSMutableArray *mutableCars;
+@property (nonatomic, retain) NSMutableArray *mutableBuildings;
 
 @end
 
 @implementation EKCarWash
 
-@dynamic car;
-@dynamic building;
+@dynamic cars;
+@dynamic buildings;
 
 - (NSArray *)car {
-    return [[self.mutableCar copy] autorelease];
+    
+    return [[self.mutableCars copy] autorelease];
 }
 
 - (NSArray *)building {
-    return [[self.mutableBuilding copy] autorelease];
+    
+    return [[self.mutableBuildings copy] autorelease];
 }
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
-    self.mutableCar = [NSMutableArray array];
-    self.mutableBuilding = [NSMutableArray array];
+    self.mutableCars = [NSMutableArray array];
+    self.mutableBuildings = [NSMutableArray array];
+    
     return self;
 }
 
+- (void)dealloc {
+    self.mutableCars = nil;
+    self.mutableBuildings = nil;
+    [super dealloc];
+}
+
 - (void)addCar:(EKCar *)car {
-    [self.mutableCar addObject:car];
-    NSLog(@"car was added");
+    if (0 != car) {
+        [self.mutableCars addObject:car];
+        NSLog(@"car was added");
+    }
 }
 
 - (void)removeCar:(EKCar *)car {
-    [self.mutableCar removeObject:car];
+    [self.mutableCars removeObject:car];
     NSLog(@"car was removed");
 }
 
 - (void)addBuilding:(EKBuilding *)building {
-    [self.mutableBuilding addObject:building];
+    if (0 != building) {
+    [self.mutableBuildings addObject:building];
     NSLog(@"building was added");
+    }
 }
 
 - (void)removeBuilding:(EKBuilding *)building {
-    [self.mutableBuilding removeObject:building];
+    [self.mutableBuildings removeObject:building];
     NSLog(@"building was removed");
 }
 

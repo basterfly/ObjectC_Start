@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EKWorker.h"
 
 @interface EKRoom : NSObject
+@property (nonatomic, readonly) NSUInteger  *roomCapacity;
+@property (nonatomic, readonly) NSArray     *workers;
+
+- (void)addWorker:(EKWorker *)worker;
+- (void)removeWorker:(EKWorker *)worker;
 
 @end

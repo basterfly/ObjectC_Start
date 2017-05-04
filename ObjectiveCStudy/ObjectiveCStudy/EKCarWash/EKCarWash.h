@@ -11,9 +11,8 @@
 #import "EKBuilding.h"
 
 @interface EKCarWash : NSObject
-
-@property (nonatomic, copy)     NSArray *car;
-@property (nonatomic, readonly) NSArray *building;
+@property (nonatomic, copy)     NSArray *cars;
+@property (nonatomic, readonly) NSArray *buildings;
 
 - (void)addCar:(EKCar *)car;
 

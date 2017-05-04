@@ -10,7 +10,6 @@
 #import "EKRoom.h"
 
 @interface EKBuilding : NSObject
-
 @property(nonatomic, readonly) NSArray *rooms;
 
 - (void)addRoom:(EKRoom *)room;
