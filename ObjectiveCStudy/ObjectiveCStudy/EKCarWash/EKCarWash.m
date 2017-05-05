@@ -67,4 +67,8 @@
     NSLog(@"building was removed");
 }
 
+- (void)carWashHierarchy {
+    sel
+}
+
 @end

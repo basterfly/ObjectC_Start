@@ -9,9 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "EKCarWashProtocol.h"
 
+@class EKCar;
+
 @interface EKWorker : NSObject <EKCarWashProtocol>
 @property (nonatomic, readonly) NSString    *name;
 @property (nonatomic, assign)   NSUInteger  salary;
 @property (nonatomic, assign)   NSUInteger  experience;
+
+- (void)performSpecificOperationWithObject:(id<EKCarWashProtocol>)object;
 
 @end

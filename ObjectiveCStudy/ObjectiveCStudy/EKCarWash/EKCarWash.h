@@ -16,8 +16,7 @@
 
 - (void)addCar:(EKCar *)car;
 - (void)removeCar:(EKCar *)car;
-- (void)addBuilding:(EKBuilding *)building;
-- (void)removeBuilding:(EKBuilding *)building;
-- (void)carWashHierarchy;
+//- (void)addBuilding:(EKBuilding *)building;
+//- (void)removeBuilding:(EKBuilding *)building;
 
 @end

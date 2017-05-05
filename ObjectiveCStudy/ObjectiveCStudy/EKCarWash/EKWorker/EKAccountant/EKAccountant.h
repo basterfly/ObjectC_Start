@@ -10,6 +10,4 @@
 
 @interface EKAccountant : EKWorker
 
-- (void)takeMoney;
-
 @end

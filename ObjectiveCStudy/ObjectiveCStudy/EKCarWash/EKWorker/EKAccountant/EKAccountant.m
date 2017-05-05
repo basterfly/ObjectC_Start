@@ -10,4 +10,9 @@
 
 @implementation EKAccountant
 
+- (void)performSpecificOperationWithObject:(EKWorker *)washer {
+    [super performSpecificOperationWithObject:washer];          // self.money += [washer giveMoney];
+    NSLog(@"%@: money was counted = %lu", self.name, self.money);
+}
+
 @end

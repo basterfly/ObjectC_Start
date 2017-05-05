@@ -11,7 +11,6 @@
 
 @interface EKCar : NSObject <EKCarWashProtocol>
 
-@property(nonatomic, readonly) BOOL dirty;
-@property (nonatomic, readonly) NSUInteger money;
+@property(nonatomic, assign) BOOL dirty;
 
 @end

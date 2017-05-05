@@ -8,6 +8,14 @@
 
 #import "EKWasher.h"
 
+#import "EKCar.h"
+
 @implementation EKWasher
+
+- (void)performSpecificOperationWithObject:(EKCar *)object {
+    NSLog(@"start washing");
+    [super performSpecificOperationWithObject:object];
+    NSLog(@"wash finished, give money %lu", self.money);
+}
 
 @end

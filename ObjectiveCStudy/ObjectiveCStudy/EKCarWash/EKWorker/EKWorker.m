@@ -35,4 +35,8 @@
     return tempMoney;
 }
 
+- (void)performSpecificOperationWithObject:(id<EKCarWashProtocol>)object {
+    self.money += [object giveMoney];
+}
+
 @end

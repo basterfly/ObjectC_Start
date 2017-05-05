@@ -18,5 +18,6 @@
 
 @optional
 - (void)takeMoneyFromWorker:(EKWorker *)worker;
+- (void)moneyCount:(EKWorker *)worker;
 
 @end

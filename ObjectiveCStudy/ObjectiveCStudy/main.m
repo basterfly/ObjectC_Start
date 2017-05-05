@@ -15,9 +15,6 @@ int main(int argc, const char * argv[]) {
 //        [EKTests creatureTests];
         
         EKCarWash *carWash = [[EKCarWash new] autorelease];
-        NSMutableArray *buildings = [NSMutableArray array];
-        NSMutableArray *cars = [NSMutableArray array];
-        buildings = @[carWashBuilding, office];
     }
     
     return 0;
