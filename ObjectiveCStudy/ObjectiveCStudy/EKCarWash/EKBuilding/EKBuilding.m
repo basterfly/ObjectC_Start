@@ -46,4 +46,8 @@
     NSLog(@"room was removed");
 }
 
+- (EKWorker *)findAWorker:(Class)worker {
+    
+}
+
 @end

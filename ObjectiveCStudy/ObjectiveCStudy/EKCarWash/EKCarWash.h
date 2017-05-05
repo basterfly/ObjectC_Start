@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EKCar.h"
-#import "EKBuilding.h"
+
+@class EKCar;
 
 @interface EKCarWash : NSObject
 @property (nonatomic, copy)     NSArray *cars;
@@ -18,5 +18,6 @@
 - (void)removeCar:(EKCar *)car;
 //- (void)addBuilding:(EKBuilding *)building;
 //- (void)removeBuilding:(EKBuilding *)building;
+- (void)washing;
 
 @end

@@ -7,6 +7,12 @@
 //
 
 #import "EKCarWash.h"
+#import "EKCar.h"
+#import "EKBuilding.h"
+#import "EKRoom.h"
+#import "EKWasher.h"
+#import "EKAccountant.h"
+#import "EKDirector.h"
 
 @interface EKCarWash ()
 @property (nonatomic, retain) NSMutableArray *mutableCars;
@@ -68,7 +74,33 @@
 }
 
 - (void)carWashHierarchy {
-    sel
+    EKWasher *washer = [[EKWasher new] autorelease];
+    EKAccountant *accountant = [[EKAccountant new] autorelease];
+    EKDirector *director = [[EKDirector new] autorelease];
+    
+    EKBuilding *buildingCarWash = [[EKBuilding new] autorelease];
+    EKBuilding *office = [[EKBuilding new] autorelease];
+    
+    EKRoom *carWashRoom = [[EKRoom new] autorelease];
+    EKRoom *officeRoom = [[EKRoom new] autorelease];
+    
+    [buildingCarWash addRoom:carWashRoom];
+    [office addRoom:officeRoom];
+    
+    [carWashRoom addWorker:washer];
+    [officeRoom addWorker:accountant]; //array for workers add
+    [officeRoom addWorker:director];
+}
+
+- (void)washing {
+    EKWorker *worker = nil;
+    for (EKBuilding *building in self.mutableBuildings) {
+        EKWorker *findWorker = [building findAWorker:[EKWasher class]];
+        if (0 != findWorker) 
+    }
+    for (EKCar *car in self.mutableCars) {
+        [worker performSpecificOperationWithObject:car];
+    }
 }
 
 @end

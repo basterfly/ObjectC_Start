@@ -16,6 +16,12 @@
 
 @implementation EKRoom
 
+@dynamic workers;
+
+- (NSArray *)workers {
+    return [[self.mutableWorkers copy] autorelease];
+}
+
 - (instancetype)init {
     self = [super init];
     self.mutableWorkers = [NSMutableArray array];
