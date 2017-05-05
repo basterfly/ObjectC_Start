@@ -19,6 +19,7 @@
 - (instancetype)init {
     self = [super init];
     self.mutableWorkers = [NSMutableArray array];
+    
     return self;
 }
 

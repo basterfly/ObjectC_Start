@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EKCarWashProtocol.h"
 
-@interface EKCar : NSObject
+@interface EKCar : NSObject <EKCarWashProtocol>
 
 @property(nonatomic, readonly) BOOL dirty;
+@property (nonatomic, readonly) NSUInteger money;
 
 @end

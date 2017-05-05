@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EKCarWashProtocol.h"
 
-@interface EKWorker : NSObject
+@interface EKWorker : NSObject <EKCarWashProtocol>
 @property (nonatomic, readonly) NSString    *name;
 @property (nonatomic, assign)   NSUInteger  salary;
 @property (nonatomic, assign)   NSUInteger  experience;

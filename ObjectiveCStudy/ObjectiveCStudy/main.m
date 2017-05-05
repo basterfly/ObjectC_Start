@@ -8,10 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "EKTests.h"
+#import "EKCarWash.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-       // [EKTests creatureTests];
+//        [EKTests creatureTests];
+        
+        EKCarWash *carWash = [[EKCarWash new] autorelease];
+        NSMutableArray *buildings = [NSMutableArray array];
+        NSMutableArray *cars = [NSMutableArray array];
+        buildings = @[carWashBuilding, office];
     }
     
     return 0;

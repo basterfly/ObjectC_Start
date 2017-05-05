@@ -8,6 +8,13 @@
 
 #import "EKDirector.h"
 
+@interface EKDirector ()
+
+@end
+
 @implementation EKDirector
+
+
+
 
 @end

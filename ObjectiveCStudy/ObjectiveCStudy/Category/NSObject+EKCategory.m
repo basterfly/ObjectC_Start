@@ -11,6 +11,7 @@
 @implementation NSObject (EKCategory)
 
 + (instancetype)object {
+    
     return [[[self alloc] init] autorelease];
 }
 

@@ -15,11 +15,9 @@
 @property (nonatomic, readonly) NSArray *buildings;
 
 - (void)addCar:(EKCar *)car;
-
 - (void)removeCar:(EKCar *)car;
-
 - (void)addBuilding:(EKBuilding *)building;
-
 - (void)removeBuilding:(EKBuilding *)building;
+- (void)carWashHierarchy;
 
 @end

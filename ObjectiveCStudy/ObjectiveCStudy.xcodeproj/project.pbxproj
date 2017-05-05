@@ -45,6 +45,7 @@
 		458CD4CB1EBA5440003DE3B8 /* EKAccountant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKAccountant.m; sourceTree = "<group>"; };
 		458CD4CD1EBA5473003DE3B8 /* EKDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKDirector.h; sourceTree = "<group>"; };
 		458CD4CE1EBA5473003DE3B8 /* EKDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKDirector.m; sourceTree = "<group>"; };
+		458CD4D11EBB6666003DE3B8 /* EKCarWashProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKCarWashProtocol.h; sourceTree = "<group>"; };
 		45C97E8D1EAA91F00039F373 /* ObjectiveCStudy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ObjectiveCStudy; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C97E901EAA91F00039F373 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		45C97E981EAA93990039F373 /* EKCreature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKCreature.h; sourceTree = "<group>"; };
@@ -80,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		458CD4D01EBB61F3003DE3B8 /* EKCarWashProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				458CD4D11EBB6666003DE3B8 /* EKCarWashProtocol.h */,
+			);
+			path = EKCarWashProtocol;
+			sourceTree = "<group>";
+		};
 		45C97E841EAA91F00039F373 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +169,7 @@
 		45F78E481EB3546700E1C849 /* EKCarWash */ = {
 			isa = PBXGroup;
 			children = (
+				458CD4D01EBB61F3003DE3B8 /* EKCarWashProtocol */,
 				45F78E621EB9DFED00E1C849 /* EKCar */,
 				45F78E5D1EB9DC5A00E1C849 /* EKWorker */,
 				45F78E5C1EB9DC0000E1C849 /* EKRoom */,
