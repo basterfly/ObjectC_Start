@@ -9,7 +9,7 @@
 #import "EKCar.h"
 
 @interface EKCar ()
-@property (nonatomic, assign)   NSUInteger money;
+@property (nonatomic, assign) NSUInteger money;
 
 @end
 

@@ -20,7 +20,7 @@ int main(int argc, const char * argv[]) {
             EKCar *car = [[EKCar new] autorelease];
             [carWash addCar:car];
         }
-        
+        [carWash washing];
     }
     
     return 0;

@@ -36,8 +36,8 @@
 
 - (void)addRoom:(EKRoom *)room {
     if (0 != room) {
-    [self.mutableRooms addObject:room];
-    NSLog(@"room was added");
+        [self.mutableRooms addObject:room];
+        NSLog(@"room was added");
     }
 }
 
@@ -46,8 +46,16 @@
     NSLog(@"room was removed");
 }
 
-- (EKWorker *)findAWorker:(Class)worker {
-    
+- (EKWorker *)findAWorker:(Class)class {
+    for (EKRoom *room in self.mutableRooms) {
+        for (EKWorker *worker in room.workers) {
+            if ([worker isMemberOfClass:class]) {
+                
+                return worker;
+            }
+        }
+    }
+    return nil;
 }
 
 @end

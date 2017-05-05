@@ -39,7 +39,7 @@
     self = [super init];
     self.mutableCars = [NSMutableArray array];
     self.mutableBuildings = [NSMutableArray array];
-    
+   // [self carWashHierarchy]
     return self;
 }
 
@@ -62,15 +62,26 @@
 }
 
 - (void)addBuilding:(EKBuilding *)building {
-    if (0 != building) {
-    [self.mutableBuildings addObject:building];
-    NSLog(@"building was added");
+    if (building) {
+        [self.mutableBuildings addObject:building];
+        NSLog(@"building was added");
     }
 }
 
 - (void)removeBuilding:(EKBuilding *)building {
     [self.mutableBuildings removeObject:building];
     NSLog(@"building was removed");
+}
+
+- (EKWorker *)findSomeWorker:(Class)class {
+    for (EKBuilding *building in self.mutableBuildings) {
+        EKWorker *findWorker = [building findAWorker:class];
+        if (nil != findWorker) {
+            
+            return findWorker;
+        }
+    }
+    return nil;
 }
 
 - (void)carWashHierarchy {
@@ -90,16 +101,20 @@
     [carWashRoom addWorker:washer];
     [officeRoom addWorker:accountant]; //array for workers add
     [officeRoom addWorker:director];
+    
+    [self addBuilding:buildingCarWash];
+    [self addBuilding:office];
 }
 
 - (void)washing {
-    EKWorker *worker = nil;
-    for (EKBuilding *building in self.mutableBuildings) {
-        EKWorker *findWorker = [building findAWorker:[EKWasher class]];
-        if (0 != findWorker) 
-    }
+    [self carWashHierarchy];
+    EKWorker *washer = [self findSomeWorker:[EKWasher class]];
+    EKWorker *accountant = [self findSomeWorker:[EKAccountant class]];
+    EKWorker *director = [self findSomeWorker:[EKDirector class]];
     for (EKCar *car in self.mutableCars) {
-        [worker performSpecificOperationWithObject:car];
+        [washer performSpecificOperationWithObject:car];
+        [accountant performSpecificOperationWithObject:washer];
+        [director performSpecificOperationWithObject:accountant];
     }
 }
 

@@ -10,7 +10,6 @@
 #import "EKCarWashProtocol.h"
 
 @interface EKCar : NSObject <EKCarWashProtocol>
-
 @property(nonatomic, assign) BOOL dirty;
 
 @end
