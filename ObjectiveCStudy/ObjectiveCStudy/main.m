@@ -13,10 +13,10 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-//        [EKTests creatureTests];
+        [EKTests creatureTests];
         
         EKCarWash *carWash = [[EKCarWash new] autorelease];
-        for (NSUInteger i = 0; i < 10; i++) {
+        for (NSUInteger i = 0; i < 2; i++) {
             EKCar *car = [[EKCar new] autorelease];
             [carWash addCar:car];
         }

@@ -9,12 +9,13 @@
 #import "EKCreatureMale.h"
 #import "EKRandom.h"
 
-static const NSString *kEKPrintStringFight = @"Fight!";
+static const NSString *kEKFight = @"Fight!";
 
 @implementation EKCreatureMale
 
 - (void)performGenderSpecificOperation {
-    NSLog(@"%@", kEKPrintStringFight);
+    [self sayHello];
+    NSLog(@"%@", kEKFight);
 }
 
 @end

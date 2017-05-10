@@ -39,7 +39,7 @@
     self = [super init];
     self.mutableCars = [NSMutableArray array];
     self.mutableBuildings = [NSMutableArray array];
-   // [self carWashHierarchy]
+    [self carWashHierarchy];
     return self;
 }
 
@@ -107,7 +107,6 @@
 }
 
 - (void)washing {
-    [self carWashHierarchy];
     EKWorker *washer = [self findSomeWorker:[EKWasher class]];
     EKWorker *accountant = [self findSomeWorker:[EKAccountant class]];
     EKWorker *director = [self findSomeWorker:[EKDirector class]];

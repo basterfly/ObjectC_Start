@@ -8,4 +8,5 @@
 
 #import "EKCreature.h"
 
-NSUInteger EKRandom(NSRange range);
+NSUInteger EKRandomInRange(NSRange range);
+BOOL EKRandomBool();

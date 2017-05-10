@@ -8,6 +8,10 @@
 
 #import "EKRandom.h"
 
-NSUInteger EKRandom(NSRange range) {
+NSUInteger EKRandomInRange(NSRange range) {
     return arc4random_uniform((uint32_t)range.length) + range.location;
+}
+
+BOOL EKRandomBool() {
+    return arc4random_uniform(2);
 }

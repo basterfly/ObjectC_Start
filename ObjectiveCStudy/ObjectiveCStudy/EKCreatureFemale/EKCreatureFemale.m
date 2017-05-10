@@ -8,12 +8,13 @@
 
 #import "EKCreatureFemale.h"
 
-static const NSString *kEKPrintStringWasBorn = @"Was born new child.";
+static const NSString *kEKWasBorn = @"Was born new child.";
 
 @implementation EKCreatureFemale
 
 - (void)performGenderSpecificOperation {
-    NSLog(@"%@", kEKPrintStringWasBorn);
+    [self sayHello];
+    NSLog(@"%@", kEKWasBorn);
 }
 
 @end

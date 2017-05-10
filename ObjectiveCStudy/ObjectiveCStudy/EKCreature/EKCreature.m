@@ -9,8 +9,11 @@
 #import "EKCreature.h"
 #import "EKRandom.h"
 
-static const NSString *kEKPrintStringMyNameIdIs = @"My name-id is:";
-static const NSString *kEKPrintStringHello = @"Hello!";
+static const NSString   *kEKMyNameIdIs      = @"My name-id is:";
+static const NSString   *kEKHello           = @"Hello!";
+static const NSRange    kEKAgeRange         = {1, 80};
+static const NSRange    kEKWeightRange      = {3, 100};
+static const NSRange    kEKNameRange        = {111111, 111111};
 
 @interface EKCreature ()
 @property (nonatomic, retain) NSMutableArray *mutableChildren;
@@ -29,14 +32,15 @@ static const NSString *kEKPrintStringHello = @"Hello!";
 - (void)dealloc {
     self.name = nil;
     self.mutableChildren = nil;
+    
     [super dealloc];
 }
 
 - (instancetype)init {
     self = [super init];
-    self.age = EKRandom(NSMakeRange(1, 80));
-    self.weight = EKRandom(NSMakeRange(10, 60));
-    self.name = [NSString stringWithFormat:@"%@ %lu", kEKPrintStringMyNameIdIs, EKRandom(NSMakeRange(111111, 111111))];
+    self.age = EKRandomInRange(kEKAgeRange);
+    self.weight = EKRandomInRange(kEKWeightRange);
+    self.name = [NSString stringWithFormat:@"%@ %lu", kEKMyNameIdIs, EKRandomInRange(kEKNameRange)];
     self.mutableChildren = [NSMutableArray array];
     
     return self;
@@ -53,7 +57,7 @@ static const NSString *kEKPrintStringHello = @"Hello!";
 }
 
 - (void)sayHello {
-    NSLog(@"%@, %@ weight: %f, age: %lu", kEKPrintStringHello, self.name, self.weight, (unsigned long)self.age);
+    NSLog(@"%@, %@ weight: %f, age: %lu", kEKHello, self.name, self.weight, (unsigned long)self.age);
     for (EKCreature *child in self.children) {
     [child sayHello];
     }
