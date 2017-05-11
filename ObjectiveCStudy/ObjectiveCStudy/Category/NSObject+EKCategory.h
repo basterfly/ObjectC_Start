@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSArray+EKBlock.h"
 
 @interface NSObject (EKCategory)
 
 + (instancetype)object;
++ (NSArray *)objectsWithCount:(NSUInteger)count;
 
 @end

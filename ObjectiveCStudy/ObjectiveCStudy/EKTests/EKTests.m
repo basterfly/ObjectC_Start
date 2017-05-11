@@ -62,8 +62,18 @@ static const NSUInteger kEKCreatureGenderCount = 7;
     for (EKCreature *creature in creatures) {
         [creature performGenderSpecificOperation];
     }
+    
     NSLog(@"~~~~~~~~~FINISH~~~~~~~~~~~~~");
-
+    //NSArray *creatures = [EKCreature objectsWithCount:4];
+    NSArray *mutArray = [NSArray objectsWithCount:4 factoryBlock:^id{
+        EKCreature *creature = [EKCreature object];
+        
+        [creature addChildren:[NSArray objectsWithCount:2 factoryBlock:^id{
+            return [EKCreature object];
+        }]];
+        
+        return creature;
+    }];
 }
 
 @end
