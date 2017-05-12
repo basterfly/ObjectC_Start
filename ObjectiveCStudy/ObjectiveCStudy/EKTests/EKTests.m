@@ -14,67 +14,30 @@
 #import "NSObject+EKCategory.h"
 #import "EKRandom.h"
 
-static const NSUInteger kEKCreatureCount = 3;
-static const NSUInteger kEKCreatureChildrenCount = 3;
-static const NSUInteger kEKCreatureGenderCount = 7;
+static const NSUInteger kEKCreatureCount = 4;
+static const NSUInteger kEKChildrenCount = 3;
 
 @implementation EKTests
 
 + (void)creatureTests {
     NSLog(@"EKTests");
-    NSMutableArray *array = [NSMutableArray object];
-    for (int index = 0; index < kEKCreatureCount; index++) {
-        EKCreature *creature = [EKCreature object];
-        for (int index = 0; index < kEKCreatureChildrenCount; index++) {
-            EKCreature *child = [EKCreature object];
-            [creature addChild:child];
-        }
-        
-        [array addObject:creature];
-    }
     
-    EKCreature *creature = [EKCreature object];
-    NSMutableArray *children = [NSMutableArray object];
-    for (NSUInteger i = 0; i < kEKCreatureCount; i++) {
-        EKCreature *creature = [EKCreature object];
-        [children addObject:creature];
-    }
+    NSArray *creatures = [NSArray objectsWithCount:kEKCreatureCount factoryBlock:^id{
+        EKCreature *creature = EKRandomBool() ? [EKCreatureMale object] : [EKCreatureFemale object];
     
-    [creature addChildren:children];
-    NSLog(@"~~~~~~~~~~~~~~~~~~~~~~");
-    [creature sayHello];
-    [creature removeChildren:children];
-    NSLog(@"~~~~~~~~~~~~~~~~~~~~~~");
-    [creature sayHello];
-    EKCreatureMale *creatureMale = [EKCreatureMale object];
-    [creatureMale sayHello];
-    [creatureMale performGenderSpecificOperation];
-    EKCreatureFemale *creatureFemale = [EKCreatureFemale object];
-    [creatureFemale sayHello];
-    [creatureFemale performGenderSpecificOperation];
-    NSLog(@"~~~~~~~~START~~~~~~~~~~~~~~");
-    NSMutableArray *creatures = [NSMutableArray object];
-    for (NSUInteger i = 0; i < kEKCreatureGenderCount; i++) {
-        Class creatureClass = EKRandomBool() ? [EKCreatureMale class] : [EKCreatureFemale class];
-        EKCreature *creature = [creatureClass object];
-        [creatures addObject:creature];
-    }
+        NSArray *children = [NSArray objectsWithCount:kEKChildrenCount factoryBlock:^id{
+            return EKRandomBool() ? [EKCreatureMale object] : [EKCreatureFemale object];
+        }];
+                             
+        [creature addChildren:children];
+                             
+        return creature;
+    }];
     
     for (EKCreature *creature in creatures) {
         [creature performGenderSpecificOperation];
+        
     }
-    
-    NSLog(@"~~~~~~~~~FINISH~~~~~~~~~~~~~");
-    //NSArray *creatures = [EKCreature objectsWithCount:4];
-    NSArray *mutArray = [NSArray objectsWithCount:4 factoryBlock:^id{
-        EKCreature *creature = [EKCreature object];
-        
-        [creature addChildren:[NSArray objectsWithCount:2 factoryBlock:^id{
-            return [EKCreature object];
-        }]];
-        
-        return creature;
-    }];
 }
 
 @end

@@ -17,7 +17,7 @@ static const NSUInteger EKCount = 5;
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        //[EKTests creatureTests];
+        [EKTests creatureTests];
         
         EKCarWash *carWash = [EKCarWash object];
         for (NSUInteger i = 0; i < EKCount; i++) {

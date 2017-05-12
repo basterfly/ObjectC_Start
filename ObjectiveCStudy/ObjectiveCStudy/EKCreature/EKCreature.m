@@ -59,7 +59,7 @@ static const NSRange    kEKNameRange        = {111111, 111111};
 - (void)sayHello {
     NSLog(@"%@, %@ weight: %f, age: %lu", kEKHello, self.name, self.weight, (unsigned long)self.age);
     for (EKCreature *child in self.children) {
-    [child sayHello];
+        [child sayHello];
     }
 }
 

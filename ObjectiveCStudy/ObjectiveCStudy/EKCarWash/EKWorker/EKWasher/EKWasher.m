@@ -20,7 +20,7 @@
 
 - (void)performSpecificOperationWithObject:(EKCar *)object {
     NSLog(@"start washing");
-    object.dirty = NO;
+    object.state = EKcarStateClean;
 }
 
 - (void)washfinished {

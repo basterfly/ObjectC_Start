@@ -8,6 +8,8 @@
 
 #import "EKCar.h"
 
+static const NSUInteger EKMoney = 100;
+
 @interface EKCar ()
 @property (nonatomic, assign) NSUInteger money;
 
@@ -17,8 +19,8 @@
 
 - (instancetype)init {
     self = [super init];
-    self.dirty = YES;
-    self.money = (NSUInteger) 100;
+    self.state = EKcarStateDirty;
+    self.money = EKMoney;
     
     return self;
 }

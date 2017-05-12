@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface EKCreature : NSObject
-@property (nonatomic, readonly)     NSString            *name;
-@property (nonatomic, assign)       NSUInteger          age;
-@property (nonatomic, assign)       float               weight;
-@property (nonatomic, readonly)     NSArray             *children;
+@property (nonatomic, readonly)     NSString        *name;
+@property (nonatomic, assign)       NSUInteger      age;
+@property (nonatomic, assign)       float           weight;
+@property (nonatomic, readonly)     NSArray         *children;
 
 - (void)addChild:(EKCreature *)child;
 - (void)removeChild:(EKCreature *)child;

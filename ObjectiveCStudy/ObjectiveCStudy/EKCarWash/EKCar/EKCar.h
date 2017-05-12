@@ -9,7 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "EKMoneyTransfer.h"
 
+typedef NS_ENUM(NSUInteger, EKCarState) {
+    EKcarStateDirty,
+    EKcarStateClean
+};
+
 @interface EKCar : NSObject <EKMoneyTransfer>
-@property (nonatomic, assign) BOOL dirty;
+@property (nonatomic, assign) EKCarState state;
 
 @end
