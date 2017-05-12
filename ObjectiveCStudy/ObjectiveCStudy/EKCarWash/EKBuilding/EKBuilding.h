@@ -14,6 +14,6 @@
 
 - (void)addRoom:(EKRoom *)room;
 - (void)removeRoom:(EKRoom *)room;
-- (EKWorker *)findAWorker:(Class)worker;
+- (EKWorker *)findAWorkerOfClass:(Class)worker;
 
 @end

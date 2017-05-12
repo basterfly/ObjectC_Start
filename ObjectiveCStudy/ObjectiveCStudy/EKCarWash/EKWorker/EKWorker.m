@@ -16,16 +16,15 @@
 
 @implementation EKWorker
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     self.name = NSStringFromClass([self class]);
     
     return self;
 }
 
-- (void)takeMoneyFromWorker:(EKWorker *)worker {
-    self.money = [worker giveMoney];
+- (void)takeMoneyFromObject:(id<EKMoneyTransfer> )object {
+    self.money += [object giveMoney];
 }
 
 - (NSUInteger)giveMoney {
@@ -35,8 +34,8 @@
     return tempMoney;
 }
 
-- (void)performSpecificOperationWithObject:(id<EKCarWashProtocol>)object {
-    self.money += [object giveMoney];
+- (void)performSpecificOperationWithObject:(id<EKMoneyTransfer>)object {
+    [self takeMoneyFromObject:object];
 }
 
 @end

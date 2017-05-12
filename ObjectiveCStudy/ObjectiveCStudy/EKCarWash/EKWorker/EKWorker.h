@@ -7,15 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EKCarWashProtocol.h"
+#import "EKMoneyTransfer.h"
 
 @class EKCar;
 
-@interface EKWorker : NSObject <EKCarWashProtocol>
+@interface EKWorker : NSObject <EKMoneyTransfer>
 @property (nonatomic, readonly) NSString    *name;
 @property (nonatomic, assign)   NSUInteger  salary;
 @property (nonatomic, assign)   NSUInteger  experience;
 
-- (void)performSpecificOperationWithObject:(id<EKCarWashProtocol>)object;
+- (void)performSpecificOperationWithObject:(id<EKMoneyTransfer>)object;
 
 @end

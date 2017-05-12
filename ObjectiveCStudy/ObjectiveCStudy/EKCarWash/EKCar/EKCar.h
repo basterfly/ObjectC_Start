@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EKCarWashProtocol.h"
+#import "EKMoneyTransfer.h"
 
-@interface EKCar : NSObject <EKCarWashProtocol>
-@property(nonatomic, assign) BOOL dirty;
+@interface EKCar : NSObject <EKMoneyTransfer>
+@property (nonatomic, assign) BOOL dirty;
 
 @end

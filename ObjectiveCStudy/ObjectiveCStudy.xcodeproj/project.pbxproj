@@ -46,13 +46,13 @@
 		458CD4CB1EBA5440003DE3B8 /* EKAccountant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKAccountant.m; sourceTree = "<group>"; };
 		458CD4CD1EBA5473003DE3B8 /* EKDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKDirector.h; sourceTree = "<group>"; };
 		458CD4CE1EBA5473003DE3B8 /* EKDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKDirector.m; sourceTree = "<group>"; };
-		458CD4D11EBB6666003DE3B8 /* EKCarWashProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKCarWashProtocol.h; sourceTree = "<group>"; };
 		45C97E8D1EAA91F00039F373 /* ObjectiveCStudy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ObjectiveCStudy; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C97E901EAA91F00039F373 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		45C97E981EAA93990039F373 /* EKCreature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKCreature.h; sourceTree = "<group>"; };
 		45C97E991EAA93990039F373 /* EKCreature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKCreature.m; sourceTree = "<group>"; };
 		45E529581EC48B6B0042E15F /* NSArray+EKBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+EKBlock.h"; sourceTree = "<group>"; };
 		45E529591EC48B6B0042E15F /* NSArray+EKBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EKBlock.m"; sourceTree = "<group>"; };
+		45F1B4ED1EC5FFE1000F561F /* EKMoneyTransfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKMoneyTransfer.h; sourceTree = "<group>"; };
 		45F3627B1EAB517B003CFF39 /* EKCreatureMale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKCreatureMale.h; sourceTree = "<group>"; };
 		45F3627C1EAB517B003CFF39 /* EKCreatureMale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKCreatureMale.m; sourceTree = "<group>"; };
 		45F3627F1EAB51BA003CFF39 /* EKCreatureFemale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKCreatureFemale.h; sourceTree = "<group>"; };
@@ -84,14 +84,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		458CD4D01EBB61F3003DE3B8 /* EKCarWashProtocol */ = {
-			isa = PBXGroup;
-			children = (
-				458CD4D11EBB6666003DE3B8 /* EKCarWashProtocol.h */,
-			);
-			path = EKCarWashProtocol;
-			sourceTree = "<group>";
-		};
 		45C97E841EAA91F00039F373 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +123,14 @@
 				45F78E211EAEA24200E1C849 /* EKRandom.m */,
 			);
 			path = EKCreature;
+			sourceTree = "<group>";
+		};
+		45F1B4EC1EC5FF04000F561F /* EKMoneyTransferProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				45F1B4ED1EC5FFE1000F561F /* EKMoneyTransfer.h */,
+			);
+			path = EKMoneyTransferProtocol;
 			sourceTree = "<group>";
 		};
 		45F3627A1EAB513F003CFF39 /* EKCreatureMale */ = {
@@ -174,7 +174,7 @@
 		45F78E481EB3546700E1C849 /* EKCarWash */ = {
 			isa = PBXGroup;
 			children = (
-				458CD4D01EBB61F3003DE3B8 /* EKCarWashProtocol */,
+				45F1B4EC1EC5FF04000F561F /* EKMoneyTransferProtocol */,
 				45F78E621EB9DFED00E1C849 /* EKCar */,
 				45F78E5D1EB9DC5A00E1C849 /* EKWorker */,
 				45F78E5C1EB9DC0000E1C849 /* EKRoom */,
@@ -236,11 +236,11 @@
 		45F78E5D1EB9DC5A00E1C849 /* EKWorker */ = {
 			isa = PBXGroup;
 			children = (
+				45F78E5E1EB9DC9E00E1C849 /* EKWorker.h */,
+				45F78E5F1EB9DC9E00E1C849 /* EKWorker.m */,
 				45F78E571EB3FA0E00E1C849 /* EKDirector */,
 				45F78E561EB3F8EA00E1C849 /* EKAccountant */,
 				45F78E551EB366B500E1C849 /* EKWasher */,
-				45F78E5E1EB9DC9E00E1C849 /* EKWorker.h */,
-				45F78E5F1EB9DC9E00E1C849 /* EKWorker.m */,
 			);
 			path = EKWorker;
 			sourceTree = "<group>";

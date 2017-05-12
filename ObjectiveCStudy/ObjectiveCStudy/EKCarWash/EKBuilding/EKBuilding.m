@@ -18,7 +18,6 @@
 @dynamic rooms;
 
 - (NSArray *)rooms {
-    
     return [[self.mutableRooms copy] autorelease];
 }
 
@@ -31,11 +30,12 @@
 
 - (void)dealloc {
     self.mutableRooms = nil;
+    
     [super dealloc];
 }
 
 - (void)addRoom:(EKRoom *)room {
-    if (0 != room) {
+    if (room) {
         [self.mutableRooms addObject:room];
         NSLog(@"room was added");
     }
@@ -46,11 +46,10 @@
     NSLog(@"room was removed");
 }
 
-- (EKWorker *)findAWorker:(Class)class {
+- (EKWorker *)findAWorkerOfClass:(Class)class {
     for (EKRoom *room in self.mutableRooms) {
         for (EKWorker *worker in room.workers) {
             if ([worker isMemberOfClass:class]) {
-                
                 return worker;
             }
         }

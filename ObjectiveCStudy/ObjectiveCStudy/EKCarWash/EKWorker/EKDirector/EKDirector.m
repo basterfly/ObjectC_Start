@@ -14,9 +14,14 @@
 
 @implementation EKDirector
 
--(void)performSpecificOperationWithObject:(id<EKCarWashProtocol>)Accountant {
+- (void)performSpecificOperationWithObject:(id<EKMoneyTransfer>)Accountant {
     [super performSpecificOperationWithObject:Accountant];
     NSLog(@"Director was counted his profit: %lu", self.money);
 }
+
+- (NSUInteger)giveMoney {
+    return 0;
+}
+
 
 @end

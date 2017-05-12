@@ -31,11 +31,12 @@
 
 - (void)dealloc {
     self.mutableWorkers = nil;
+    
     [super dealloc];
 }
 
 - (void)addWorker:(EKWorker *)worker {
-    if (0 != worker) {
+    if (worker) {
         [self.mutableWorkers addObject:worker];
         NSLog(@"worker was added");
     }

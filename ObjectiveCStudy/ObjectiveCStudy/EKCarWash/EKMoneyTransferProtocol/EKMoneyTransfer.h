@@ -1,8 +1,8 @@
 //
-//  EKCarWashProtocol.h
+//  EKMoneyTransfer.h
 //  ObjectiveCStudy
 //
-//  Created by Egor on 04.05.17.
+//  Created by Egor on 12.05.17.
 //  Copyright © 2017 Yegor Kozlovskiy. All rights reserved.
 //
 
@@ -10,14 +10,14 @@
 
 @class EKWorker;
 
-@protocol EKCarWashProtocol <NSObject>
+@protocol EKMoneyTransfer <NSObject>
 @property (nonatomic, readonly) NSUInteger money;
 
 @required
 - (NSUInteger)giveMoney;
 
 @optional
-- (void)takeMoneyFromWorker:(EKWorker *)worker;
+- (void)takeMoneyFromObject:(id<EKMoneyTransfer>)object;
 - (void)moneyCount:(EKWorker *)worker;
 
 @end

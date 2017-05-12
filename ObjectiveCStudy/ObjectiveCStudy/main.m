@@ -8,19 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import "EKTests.h"
+
 #import "EKCarWash.h"
 #import "EKCar.h"
+#import "NSObject+EKCategory.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        [EKTests creatureTests];
+        //[EKTests creatureTests];
         
-        EKCarWash *carWash = [[EKCarWash new] autorelease];
+        EKCarWash *carWash = [EKCarWash object];
         for (NSUInteger i = 0; i < 2; i++) {
-            EKCar *car = [[EKCar new] autorelease];
+            EKCar *car = [EKCar object];
             [carWash addCar:car];
         }
-        [carWash washing];
+        [carWash startWashing];
     }
     
     return 0;

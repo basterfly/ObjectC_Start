@@ -18,6 +18,6 @@
 - (void)removeCar:(EKCar *)car;
 //- (void)addBuilding:(EKBuilding *)building;      //don't show at outside
 //- (void)removeBuilding:(EKBuilding *)building;
-- (void)washing;
+- (void)startWashing;
 
 @end
