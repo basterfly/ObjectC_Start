@@ -28,14 +28,18 @@
 }
 
 - (NSUInteger)giveMoney {
-    NSUInteger tempMoney = self.money;
+    NSUInteger receiveMoney = self.money;
     self.money = 0;
     
-    return tempMoney;
+    return receiveMoney;
+}
+
+- (void)processWithObject:(id<EKMoneyTransfer>)object {
+    [self takeMoneyFromObject:object];
 }
 
 - (void)performSpecificOperationWithObject:(id<EKMoneyTransfer>)object {
-    [self takeMoneyFromObject:object];
+    
 }
 
 @end

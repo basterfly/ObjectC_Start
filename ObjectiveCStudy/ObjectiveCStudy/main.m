@@ -13,15 +13,17 @@
 #import "EKCar.h"
 #import "NSObject+EKCategory.h"
 
+static const NSUInteger EKCount = 5;
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         //[EKTests creatureTests];
         
         EKCarWash *carWash = [EKCarWash object];
-        for (NSUInteger i = 0; i < 2; i++) {
-            EKCar *car = [EKCar object];
-            [carWash addCar:car];
+        for (NSUInteger i = 0; i < EKCount; i++) {
+            [carWash addCar:[EKCar object]];
         }
+        
         [carWash startWashing];
     }
     

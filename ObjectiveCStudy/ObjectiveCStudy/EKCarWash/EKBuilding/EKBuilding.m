@@ -46,7 +46,7 @@
     NSLog(@"room was removed");
 }
 
-- (EKWorker *)findAWorkerOfClass:(Class)class {
+- (EKWorker *)findWorkerOfClass:(Class)class {
     for (EKRoom *room in self.mutableRooms) {
         for (EKWorker *worker in room.workers) {
             if ([worker isMemberOfClass:class]) {

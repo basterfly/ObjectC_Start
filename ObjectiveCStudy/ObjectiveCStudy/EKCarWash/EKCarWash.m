@@ -77,7 +77,7 @@
 
 - (EKWorker *)findEmployeeOfClass:(Class)class {
     for (EKBuilding *building in self.mutableBuildings) {
-        EKWorker *findWorker = [building findAWorkerOfClass:class];
+        EKWorker *findWorker = [building findWorkerOfClass:class];
         if (nil != findWorker) {
             return findWorker;
         }
@@ -112,9 +112,9 @@
     EKWorker *accountant = [self findEmployeeOfClass:[EKAccountant class]];
     EKWorker *director = [self findEmployeeOfClass:[EKDirector class]];
     for (EKCar *car in self.mutableCars) {
-        [washer performSpecificOperationWithObject:car];
-        [accountant performSpecificOperationWithObject:washer];
-        [director performSpecificOperationWithObject:accountant];
+        [washer processWithObject:car];
+        [accountant processWithObject:washer];
+        [director processWithObject:accountant];
     }
 }
 

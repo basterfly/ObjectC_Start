@@ -16,6 +16,7 @@
 @property (nonatomic, assign)   NSUInteger  salary;
 @property (nonatomic, assign)   NSUInteger  experience;
 
+- (void)processWithObject:(id<EKMoneyTransfer>)object;
 - (void)performSpecificOperationWithObject:(id<EKMoneyTransfer>)object;
 
 @end

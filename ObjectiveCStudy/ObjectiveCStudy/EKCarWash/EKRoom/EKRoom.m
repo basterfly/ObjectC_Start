@@ -9,8 +9,8 @@
 #import "EKRoom.h"
 
 @interface EKRoom ()
-@property (nonatomic, readwrite) NSUInteger         *roomCapacity;
-@property (nonatomic, retain)    NSMutableArray     *mutableWorkers;
+@property (nonatomic, assign)   NSUInteger         *roomCapacity;
+@property (nonatomic, retain)   NSMutableArray     *mutableWorkers;
 
 @end
 
