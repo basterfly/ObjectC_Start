@@ -12,19 +12,22 @@
 #import "EKCarWash.h"
 #import "EKCar.h"
 #import "NSObject+EKCategory.h"
-
-static const NSUInteger EKCount = 5;
+#import "EKRandom.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        [EKTests creatureTests];
+//        [EKTests creatureTests];
+//        [EKTests carWashTests];
         
-        EKCarWash *carWash = [EKCarWash object];
-        for (NSUInteger i = 0; i < EKCount; i++) {
-            [carWash addCar:[EKCar object]];
-        }
+                
+        NSLog(@"%@", EKRandomName());
         
-        [carWash startWashing];
+        //NSString *string = arc4random_uniform(26) + 'a';
+        NSString *abc = @"this is test";
+        
+        abc = [NSString stringWithFormat:@"%@%@",[[abc substringToIndex:1] uppercaseString],[abc substringFromIndex:1] ];
+        NSLog(@"abc = %@",abc);
+        
     }
     
     return 0;

@@ -13,6 +13,10 @@
 #import "EKCreatureFemale.h"
 #import "NSObject+EKCategory.h"
 #import "EKRandom.h"
+#import "EKCarWash.h"
+#import "EKCar.h"
+
+static const NSUInteger EKCount = 5;
 
 static const NSUInteger kEKCreatureCount = 4;
 static const NSUInteger kEKChildrenCount = 3;
@@ -38,6 +42,16 @@ static const NSUInteger kEKChildrenCount = 3;
         [creature performGenderSpecificOperation];
         
     }
+}
+
++ (void)carWashTests {
+    EKCarWash *carWash = [EKCarWash object];
+    for (NSUInteger i = 0; i < EKCount; i++) {
+        [carWash addCar:[EKCar object]];
+    }
+    
+    [carWash startWashing];
+
 }
 
 @end

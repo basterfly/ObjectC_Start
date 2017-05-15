@@ -10,3 +10,4 @@
 
 NSUInteger EKRandomInRange(NSRange range);
 BOOL EKRandomBool();
+NSString *EKRandomName();

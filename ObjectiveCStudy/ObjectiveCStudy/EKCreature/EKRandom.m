@@ -14,4 +14,17 @@ NSUInteger EKRandomInRange(NSRange range) {
 
 BOOL EKRandomBool() {
     return arc4random_uniform(2);
+    
+}
+
+NSString *EKRandomName() {
+    NSString *letter = nil;
+    NSString *name = @" ";
+    for (NSUInteger i = 0; i < 5; i++) {
+        letter = [NSString stringWithFormat:@"%c", arc4random_uniform(26) + 'a'];
+        name = [name stringByAppendingString:letter];
+    }
+    name = [[name capitalizedString] substringFromIndex:1];
+        
+    return name;
 }

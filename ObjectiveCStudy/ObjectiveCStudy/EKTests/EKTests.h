@@ -12,4 +12,7 @@
 
 + (void)creatureTests;
 
++ (void)carWashTests;
+
+
 @end
