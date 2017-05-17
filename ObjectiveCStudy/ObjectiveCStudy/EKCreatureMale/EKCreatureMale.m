@@ -13,9 +13,13 @@ static const NSString *kEKFight = @"Fight!";
 
 @implementation EKCreatureMale
 
-- (void)performGenderSpecificOperation {
-    [self sayHello];
+- (void)fight {
     NSLog(@"%@", kEKFight);
+}
+
+- (void)performGenderSpecificOperation {
+    [self fight];
+    [self sayHello];
 }
 
 @end

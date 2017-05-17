@@ -10,4 +10,6 @@
 
 @interface EKCreatureFemale : EKCreature
 
+- (EKCreature *)giveBirth;
+
 @end

@@ -24,7 +24,5 @@ NSString *EKRandomName() {
         letter = [NSString stringWithFormat:@"%c", arc4random_uniform(26) + 'a'];
         name = [name stringByAppendingString:letter];
     }
-    name = [[name capitalizedString] substringFromIndex:1];
-        
-    return name;
+    return [[name capitalizedString] substringFromIndex:1];
 }

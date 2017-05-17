@@ -10,4 +10,6 @@
 
 @interface EKCreatureMale : EKCreature
 
+- (void)fight;
+
 @end

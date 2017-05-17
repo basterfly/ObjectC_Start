@@ -7,13 +7,13 @@
 //
 
 #import "EKCreature.h"
+
 #import "EKRandom.h"
 
-static const NSString   *kEKMyNameIdIs      = @"My name-id is:";
+static const NSString   *kEKMyNameIdIs      = @"My name is:";
 static const NSString   *kEKHello           = @"Hello!";
 static const NSRange    kEKAgeRange         = {1, 80};
 static const NSRange    kEKWeightRange      = {3, 100};
-static const NSRange    kEKNameRange        = {111111, 111111};
 
 @interface EKCreature ()
 @property (nonatomic, retain) NSMutableArray *mutableChildren;
@@ -40,7 +40,7 @@ static const NSRange    kEKNameRange        = {111111, 111111};
     self = [super init];
     self.age = EKRandomInRange(kEKAgeRange);
     self.weight = EKRandomInRange(kEKWeightRange);
-    self.name = [NSString stringWithFormat:@"%@ %lu", kEKMyNameIdIs, EKRandomInRange(kEKNameRange)];
+    self.name = [NSString stringWithFormat:@"%@ %@", kEKMyNameIdIs, EKRandomName()];
     self.mutableChildren = [NSMutableArray array];
     
     return self;
@@ -59,7 +59,8 @@ static const NSRange    kEKNameRange        = {111111, 111111};
 - (void)sayHello {
     NSLog(@"%@, %@ weight: %f, age: %lu", kEKHello, self.name, self.weight, (unsigned long)self.age);
     for (EKCreature *child in self.children) {
-        [child sayHello];
+        [child performGenderSpecificOperation];
+//        [child sayHello];
     }
 }
 
