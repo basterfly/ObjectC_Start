@@ -14,10 +14,10 @@
 		45C97E911EAA91F00039F373 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C97E901EAA91F00039F373 /* main.m */; };
 		45C97E9A1EAA93990039F373 /* EKCreature.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C97E991EAA93990039F373 /* EKCreature.m */; };
 		45E5295A1EC48B6B0042E15F /* NSArray+EKBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E529591EC48B6B0042E15F /* NSArray+EKBlock.m */; };
+		45EA7D751ECD972D002F2474 /* NSObject+EKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EA7D741ECD972D002F2474 /* NSObject+EKExtension.m */; };
 		45F3627D1EAB517B003CFF39 /* EKCreatureMale.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F3627C1EAB517B003CFF39 /* EKCreatureMale.m */; };
 		45F362811EAB51BA003CFF39 /* EKCreatureFemale.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F362801EAB51BA003CFF39 /* EKCreatureFemale.m */; };
 		45F78E221EAEA24200E1C849 /* EKRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F78E211EAEA24200E1C849 /* EKRandom.m */; };
-		45F78E431EB2396F00E1C849 /* NSObject+EKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F78E421EB2396F00E1C849 /* NSObject+EKCategory.m */; };
 		45F78E471EB280BD00E1C849 /* EKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F78E461EB280BD00E1C849 /* EKTests.m */; };
 		45F78E4B1EB354D300E1C849 /* EKCarWash.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F78E4A1EB354D300E1C849 /* EKCarWash.m */; };
 		45F78E5B1EB9DB8200E1C849 /* EKBuilding.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F78E5A1EB9DB8200E1C849 /* EKBuilding.m */; };
@@ -52,6 +52,8 @@
 		45C97E991EAA93990039F373 /* EKCreature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKCreature.m; sourceTree = "<group>"; };
 		45E529581EC48B6B0042E15F /* NSArray+EKBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+EKBlock.h"; sourceTree = "<group>"; };
 		45E529591EC48B6B0042E15F /* NSArray+EKBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EKBlock.m"; sourceTree = "<group>"; };
+		45EA7D731ECD972D002F2474 /* NSObject+EKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EKExtension.h"; sourceTree = "<group>"; };
+		45EA7D741ECD972D002F2474 /* NSObject+EKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EKExtension.m"; sourceTree = "<group>"; };
 		45F1B4ED1EC5FFE1000F561F /* EKMoneyTransfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKMoneyTransfer.h; sourceTree = "<group>"; };
 		45F3627B1EAB517B003CFF39 /* EKCreatureMale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKCreatureMale.h; sourceTree = "<group>"; };
 		45F3627C1EAB517B003CFF39 /* EKCreatureMale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKCreatureMale.m; sourceTree = "<group>"; };
@@ -59,8 +61,6 @@
 		45F362801EAB51BA003CFF39 /* EKCreatureFemale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKCreatureFemale.m; sourceTree = "<group>"; };
 		45F78E201EAEA24200E1C849 /* EKRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKRandom.h; sourceTree = "<group>"; };
 		45F78E211EAEA24200E1C849 /* EKRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKRandom.m; sourceTree = "<group>"; };
-		45F78E411EB2396F00E1C849 /* NSObject+EKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EKCategory.h"; sourceTree = "<group>"; };
-		45F78E421EB2396F00E1C849 /* NSObject+EKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EKCategory.m"; sourceTree = "<group>"; };
 		45F78E451EB280BD00E1C849 /* EKTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKTests.h; sourceTree = "<group>"; };
 		45F78E461EB280BD00E1C849 /* EKTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKTests.m; sourceTree = "<group>"; };
 		45F78E491EB354D300E1C849 /* EKCarWash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKCarWash.h; sourceTree = "<group>"; };
@@ -154,8 +154,8 @@
 		45F78E401EB2352D00E1C849 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				45F78E411EB2396F00E1C849 /* NSObject+EKCategory.h */,
-				45F78E421EB2396F00E1C849 /* NSObject+EKCategory.m */,
+				45EA7D731ECD972D002F2474 /* NSObject+EKExtension.h */,
+				45EA7D741ECD972D002F2474 /* NSObject+EKExtension.m */,
 				45E529581EC48B6B0042E15F /* NSArray+EKBlock.h */,
 				45E529591EC48B6B0042E15F /* NSArray+EKBlock.m */,
 			);
@@ -317,7 +317,7 @@
 				45C97E9A1EAA93990039F373 /* EKCreature.m in Sources */,
 				45F78E661EB9E03500E1C849 /* EKCar.m in Sources */,
 				45F78E5B1EB9DB8200E1C849 /* EKBuilding.m in Sources */,
-				45F78E431EB2396F00E1C849 /* NSObject+EKCategory.m in Sources */,
+				45EA7D751ECD972D002F2474 /* NSObject+EKExtension.m in Sources */,
 				458CD4C91EBA4288003DE3B8 /* EKRoom.m in Sources */,
 				45F3627D1EAB517B003CFF39 /* EKCreatureMale.m in Sources */,
 				45C97E911EAA91F00039F373 /* main.m in Sources */,

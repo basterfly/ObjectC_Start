@@ -14,7 +14,7 @@
 #import "EKWasher.h"
 #import "EKAccountant.h"
 #import "EKDirector.h"
-#import "NSObject+EKCategory.h"
+#import "NSObject+EKExtension.h"
 
 @interface EKCarWash ()
 @property (nonatomic, retain) NSMutableArray *mutableCars;
@@ -77,11 +77,12 @@
 
 - (EKWorker *)findEmployeeOfClass:(Class)class {
     for (EKBuilding *building in self.mutableBuildings) {
-        EKWorker *findWorker = [building findWorkerOfClass:class];
-        if (nil != findWorker) {
-            return findWorker;
+        EKWorker *worker = [building findWorkerOfClass:class];
+        if (worker) {
+            return worker;
         }
     }
+    
     return nil;
 }
 

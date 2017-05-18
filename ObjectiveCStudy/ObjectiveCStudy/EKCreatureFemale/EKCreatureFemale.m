@@ -6,13 +6,12 @@
 //  Copyright © 2017 Yegor Kozlovskiy. All rights reserved.
 //
 
-@class EKCreatureMale;
-
 #import "EKCreatureFemale.h"
 
-//#import "EKCreatureMale.h"
+#import "EKCreatureMale.h"
 #import "EKRandom.h"
-#import "NSObject+EKCategory.h"
+
+#import "NSObject+EKExtension.h"
 
 static const NSString *kEKWasBorn = @"Was born new child.";
 

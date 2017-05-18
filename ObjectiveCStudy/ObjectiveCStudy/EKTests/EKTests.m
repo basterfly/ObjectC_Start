@@ -11,7 +11,7 @@
 #import "EKCreature.h"
 #import "EKCreatureMale.h"
 #import "EKCreatureFemale.h"
-#import "NSObject+EKCategory.h"
+#import "NSObject+EKExtension.h"
 #import "EKRandom.h"
 #import "EKCarWash.h"
 #import "EKCar.h"

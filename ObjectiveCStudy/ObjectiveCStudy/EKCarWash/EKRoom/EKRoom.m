@@ -9,7 +9,7 @@
 #import "EKRoom.h"
 
 @interface EKRoom ()
-@property (nonatomic, assign)   NSUInteger         *roomCapacity;
+@property (nonatomic, assign)   NSUInteger         roomCapacity;
 @property (nonatomic, retain)   NSMutableArray     *mutableWorkers;
 
 @end
@@ -38,7 +38,8 @@
 - (void)addWorker:(EKWorker *)worker {
     if (worker) {
         [self.mutableWorkers addObject:worker];
-        NSLog(@"worker was added");
+        self.roomCapacity +=1;
+        NSLog(@"worker was added, room capacity = %lu", self.roomCapacity);
     }
 }
 

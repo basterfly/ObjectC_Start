@@ -10,10 +10,11 @@
 
 #import "EKRandom.h"
 
-static const NSString   *kEKMyNameIdIs      = @"My name is:";
-static const NSString   *kEKHello           = @"Hello!";
-static const NSRange    kEKAgeRange         = {1, 80};
-static const NSRange    kEKWeightRange      = {3, 100};
+static const NSString       *kEKMyNameIdIs      = @"My name is:";
+static const NSString       *kEKHello           = @"Hello!";
+static const NSUInteger     kEKNameLength       = 5;
+static const NSRange        kEKAgeRange         = {1, 80};
+static const NSRange        kEKWeightRange      = {3, 100};
 
 @interface EKCreature ()
 @property (nonatomic, retain) NSMutableArray *mutableChildren;
@@ -40,7 +41,7 @@ static const NSRange    kEKWeightRange      = {3, 100};
     self = [super init];
     self.age = EKRandomInRange(kEKAgeRange);
     self.weight = EKRandomInRange(kEKWeightRange);
-    self.name = [NSString stringWithFormat:@"%@ %@", kEKMyNameIdIs, EKRandomName()];
+    self.name = [NSString stringWithFormat:@"%@ %@", kEKMyNameIdIs, EKRandomName(kEKNameLength)];
     self.mutableChildren = [NSMutableArray array];
     
     return self;

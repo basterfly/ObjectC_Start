@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSObject+EKCategory.h"
+#import "NSObject+EKExtension.h"
 
 typedef id(^EKFactoryBlock)(void);
 

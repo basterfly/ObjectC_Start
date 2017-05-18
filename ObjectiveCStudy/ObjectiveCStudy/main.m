@@ -11,16 +11,19 @@
 
 #import "EKCarWash.h"
 #import "EKCar.h"
-#import "NSObject+EKCategory.h"
 #import "EKRandom.h"
+
+#import "NSObject+EKExtension.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         [EKTests creatureTests];
 //        [EKTests carWashTests];
         
-                
-        NSLog(@"%@", EKRandomName());
+        
+        
+        
+        NSLog(@"%@", EKRandomName(7));
         
         //NSString *string = arc4random_uniform(26) + 'a';
         NSString *abc = @"this is test";

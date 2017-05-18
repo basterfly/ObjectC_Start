@@ -1,15 +1,15 @@
 //
-//  NSObject+EKCategory.h
+//  NSObject+EKExtension.h
 //  ObjectiveCStudy
 //
-//  Created by Egor on 27.04.17.
+//  Created by Egor on 18.05.17.
 //  Copyright © 2017 Yegor Kozlovskiy. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "NSArray+EKBlock.h"
 
-@interface NSObject (EKCategory)
+@interface NSObject (EKExtension)
 
 + (instancetype)object;
 + (NSArray *)objectsWithCount:(NSUInteger)count;

@@ -1,14 +1,14 @@
 //
-//  NSObject+EKCategory.m
+//  NSObject+EKExtension.m
 //  ObjectiveCStudy
 //
-//  Created by Egor on 27.04.17.
+//  Created by Egor on 18.05.17.
 //  Copyright © 2017 Yegor Kozlovskiy. All rights reserved.
 //
 
-#import "NSObject+EKCategory.h"
+#import "NSObject+EKExtension.h"
 
-@implementation NSObject (EKCategory)
+@implementation NSObject (EKExtension)
 
 + (instancetype)object {
     
