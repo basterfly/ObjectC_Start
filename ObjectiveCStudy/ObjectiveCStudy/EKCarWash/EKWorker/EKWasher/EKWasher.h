@@ -10,6 +10,6 @@
 
 @interface EKWasher : EKWorker
 
-- (void)washfinished;
+- (void)washFinished;
 
 @end

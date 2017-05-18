@@ -11,9 +11,11 @@
 #import "EKCar.h"
 #import "EKBuilding.h"
 #import "EKRoom.h"
+#import "EKCarWashRoom.h"
 #import "EKWasher.h"
 #import "EKAccountant.h"
 #import "EKDirector.h"
+
 #import "NSObject+EKExtension.h"
 
 @interface EKCarWash ()
@@ -94,15 +96,15 @@
     EKBuilding *buildingCarWash = [EKBuilding object];
     EKBuilding *office = [EKBuilding object];
     
-    EKRoom *carWashRoom = [EKRoom object];
+    EKCarWashRoom *carWashRoom = [EKCarWashRoom object];
     EKRoom *officeRoom = [EKRoom object];
     
     [buildingCarWash addRoom:carWashRoom];
     [office addRoom:officeRoom];
     
-    [carWashRoom addWorker:washer];
-    [officeRoom addWorker:accountant]; //array for workers add
-    [officeRoom addWorker:director];
+    [carWashRoom addObjectToRoom:washer];
+    [officeRoom addObjectToRoom:accountant];
+    [officeRoom addObjectToRoom:director];
     
     [self addBuilding:buildingCarWash];
     [self addBuilding:office];
@@ -113,9 +115,9 @@
     EKWorker *accountant = [self findEmployeeOfClass:[EKAccountant class]];
     EKWorker *director = [self findEmployeeOfClass:[EKDirector class]];
     for (EKCar *car in self.mutableCars) {
-        [washer processWithObject:car];
-        [accountant processWithObject:washer];
-        [director processWithObject:accountant];
+        [washer performSpecificOperationWithObject:car];
+        [accountant performSpecificOperationWithObject:washer];
+        [director performSpecificOperationWithObject:accountant];
     }
 }
 

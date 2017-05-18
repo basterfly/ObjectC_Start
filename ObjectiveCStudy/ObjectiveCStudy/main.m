@@ -17,8 +17,8 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        [EKTests creatureTests];
-//        [EKTests carWashTests];
+//        [EKTests creatureTests];
+        [EKTests carWashTests];
         
         
         

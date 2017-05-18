@@ -14,16 +14,12 @@
 
 @implementation EKDirector
 
-- (void)processWithObject:(id<EKMoneyTransfer>)Accountant {
-    [super processWithObject:Accountant];
-    [self performSpecificOperationWithObject];
-}
-
 - (NSUInteger)giveMoney {
     return 0;
 }
 
-- (void)performSpecificOperationWithObject {
+- (void)performSpecificOperationWithObject:(id<EKMoneyTransfer>)accountant {
+    [super processWithObject:accountant];
     NSLog(@"Director was counted his profit: %lu", self.money);
 }
 
