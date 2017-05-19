@@ -19,7 +19,7 @@
 #import "NSObject+EKExtension.h"
 
 @interface EKCarWash ()
-@property (nonatomic, retain) NSMutableArray *mutableCars;
+@property (nonatomic, retain) NSMutableArray *carsQueue;
 @property (nonatomic, retain) NSMutableArray *mutableBuildings;
 
 @end
@@ -29,8 +29,8 @@
 @dynamic cars;
 @dynamic buildings;
 
-- (NSArray *)car {
-    return [[self.mutableCars copy] autorelease];
+- (NSArray *)cars {
+    return [[self.carsQueue copy] autorelease];
 }
 
 - (NSArray *)building {
@@ -39,7 +39,7 @@
 
 - (instancetype)init {
     self = [super init];
-    self.mutableCars = [NSMutableArray array];
+    self.carsQueue = [NSMutableArray array];
     self.mutableBuildings = [NSMutableArray array];
     [self setupCarWashHierarchy];
     
@@ -47,7 +47,7 @@
 }
 
 - (void)dealloc {
-    self.mutableCars = nil;
+    self.carsQueue = nil;
     self.mutableBuildings = nil;
     
     [super dealloc];
@@ -55,13 +55,13 @@
 
 - (void)addCar:(EKCar *)car {
     if (car) {
-        [self.mutableCars addObject:car];
-        NSLog(@"car was added");
+        [self.carsQueue addObject:car];
+        NSLog(@"car was added to queue");
     }
 }
 
 - (void)removeCar:(EKCar *)car {
-    [self.mutableCars removeObject:car];
+    [self.carsQueue removeObject:car];
     NSLog(@"car was removed");
 }
 
@@ -88,6 +88,17 @@
     return nil;
 }
 
+- (EKCarWashRoom *)freeCarWashRoom:(Class)class {
+    for (EKBuilding *building in self.mutableBuildings) {
+        EKCarWashRoom *carWashRoom = [building findCarWashRoomOfClass:class];
+        if (carWashRoom) {
+            return carWashRoom;
+        }
+    }
+    
+    return nil;
+}
+
 - (void)setupCarWashHierarchy {
     EKWasher *washer = [EKWasher object];
     EKAccountant *accountant = [EKAccountant object];
@@ -99,23 +110,28 @@
     EKCarWashRoom *carWashRoom = [EKCarWashRoom object];
     EKRoom *officeRoom = [EKRoom object];
     
+    [self addBuilding:buildingCarWash];
+    [self addBuilding:office];
+    
     [buildingCarWash addRoom:carWashRoom];
     [office addRoom:officeRoom];
     
-    [carWashRoom addObjectToRoom:washer];
-    [officeRoom addObjectToRoom:accountant];
-    [officeRoom addObjectToRoom:director];
-    
-    [self addBuilding:buildingCarWash];
-    [self addBuilding:office];
+    [carWashRoom addWorker:washer];
+    [officeRoom addWorker:accountant];
+    [officeRoom addWorker:director];
 }
 
 - (void)startWashing {
+    
     EKWorker *washer = [self findEmployeeOfClass:[EKWasher class]];
     EKWorker *accountant = [self findEmployeeOfClass:[EKAccountant class]];
     EKWorker *director = [self findEmployeeOfClass:[EKDirector class]];
-    for (EKCar *car in self.mutableCars) {
+    for (EKCar *car in self.carsQueue) {
+        EKCarWashRoom *carWashRoom = [EKCarWashRoom object];
+        carWashRoom = [self freeCarWashRoom:[EKCarWashRoom class]];
+        [carWashRoom addCarToWashRoom:car];
         [washer performSpecificOperationWithObject:car];
+        [carWashRoom removeCarFromWashRoom:car];
         [accountant performSpecificOperationWithObject:washer];
         [director performSpecificOperationWithObject:accountant];
     }

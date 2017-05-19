@@ -14,9 +14,12 @@ NSUInteger EKRandomInRange(NSRange range) {
     return arc4random_uniform((uint32_t)range.length) + range.location;
 }
 
+NSUInteger EKRandomValueTillLocation(NSUInteger location) {
+    return arc4random_uniform((uint32_t)location);
+}
+
 BOOL EKRandomBool() {
     return arc4random_uniform(2);
-    
 }
 
 NSString *EKRandomName(NSUInteger nameLength) {
@@ -28,3 +31,4 @@ NSString *EKRandomName(NSUInteger nameLength) {
     
     return [name capitalizedString];
 }
+

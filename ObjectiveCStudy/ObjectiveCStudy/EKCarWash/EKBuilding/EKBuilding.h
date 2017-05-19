@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "EKRoom.h"
+#import "EKCarWashRoom.h"
 
 @interface EKBuilding : NSObject
 @property(nonatomic, readonly) NSArray *rooms;
@@ -15,5 +16,6 @@
 - (void)addRoom:(EKRoom *)room;
 - (void)removeRoom:(EKRoom *)room;
 - (EKWorker *)findWorkerOfClass:(Class)worker;
+- (EKCarWashRoom *)findCarWashRoomOfClass:(EKCarWashRoom *)carWashRoom;
 
 @end

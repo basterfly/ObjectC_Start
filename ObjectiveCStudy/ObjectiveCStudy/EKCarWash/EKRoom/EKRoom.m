@@ -35,9 +35,9 @@
     [super dealloc];
 }
 
-- (void)addObjectToRoom:(id)object {
-    if (object) {
-        [self.mutableWorkers addObject:object];
+- (void)addWorker:(EKWorker *)worker {
+    if (worker) {
+        [self.mutableWorkers addObject:worker];
         self.roomCapacity +=1;
         NSLog(@"worker was added, room capacity = %lu", self.roomCapacity);
     }

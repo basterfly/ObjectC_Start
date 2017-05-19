@@ -13,7 +13,7 @@
 @property (nonatomic, readonly) NSUInteger  roomCapacity;
 @property (nonatomic, readonly) NSArray     *workers;
 
-- (void)addObjectToRoom:(id)object;
+- (void)addWorker:(EKWorker *)worker;
 - (void)removeWorker:(EKWorker *)worker;
 
 @end

@@ -11,7 +11,7 @@
 @interface EKTests : NSObject
 
 + (void)creatureTests;
-
 + (void)carWashTests;
++ (void)stringTest;
 
 @end

@@ -8,30 +8,45 @@
 
 #import "EKCarWashRoom.h"
 
-@interface EKCarWashRoom();
-//@property (nonatomic, retain) NSMutableArray *carsQueue;
+@interface EKCarWashRoom ()
+@property (nonatomic, assign)   NSUInteger      roomCapacity;
+@property (nonatomic, retain)   NSMutableArray  *carsForCleanup;
 
 @end
 
 @implementation EKCarWashRoom
 
-//@dynamic cars;
-//- (NSArray *)cars {
-//    return [[self.carsQueue copy] autorelease];
-//}
-//
-//- (instancetype)init {
-//    self = [super init];
-//    self.carsQueue = [NSMutableArray array];
-//    
-//    return self;
-//}
-//
-//- (void)dealloc
-//{
-//    self.carsQueue = nil;
-//    
-//    [super dealloc];
-//}
-//
+@synthesize roomCapacity = _roomCapacity;
+
+@dynamic cars;
+- (NSArray *)cars {
+    return [[self.carsForCleanup copy] autorelease];
+}
+
+- (instancetype)init {
+    self = [super init];
+    self.carsForCleanup = [NSMutableArray array];
+    
+    return self;
+}
+
+- (void)dealloc {
+    self.carsForCleanup = nil;
+    
+    [super dealloc];
+}
+
+- (void)addCarToWashRoom:(EKCar *)car {
+    if (car) {
+        [self.carsForCleanup addObject:car];
+        self.roomCapacity ++;
+        NSLog(@"car in carWashRoom room CAPACiTY = %lu", self.roomCapacity);
+    }
+}
+
+- (void)removeCarFromWashRoom:(EKCar *)car {
+    [self.carsForCleanup removeObject:car];
+    self.roomCapacity --;
+    NSLog(@"car removed from carWashRoom room CAPACiTY = %lu", self.roomCapacity);
+}
 @end

@@ -8,6 +8,8 @@
 
 #import "EKBuilding.h"
 
+#import "EKCarWashRoom.h"
+
 @interface EKBuilding ()
 @property (nonatomic, retain) NSMutableArray *mutableRooms;
 
@@ -37,7 +39,7 @@
 - (void)addRoom:(EKRoom *)room {
     if (room) {
         [self.mutableRooms addObject:room];
-        NSLog(@"room was added");
+        NSLog(@"room %@ was added", room);
     }
 }
 
@@ -54,6 +56,17 @@
             }
         }
     }
+    
+    return nil;
+}
+
+- (EKCarWashRoom *)findCarWashRoomOfClass:(Class)class {
+    for (EKCarWashRoom *carWashRoom in self.mutableRooms) {
+        if ([carWashRoom isMemberOfClass:class]) {
+            return carWashRoom;
+        }
+    }
+    
     return nil;
 }
 

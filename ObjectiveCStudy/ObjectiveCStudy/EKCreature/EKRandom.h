@@ -9,5 +9,6 @@
 #import "EKCreature.h"
 
 NSUInteger EKRandomInRange(NSRange range);
+NSUInteger EKRandomValueTillLocation(NSUInteger location);
 BOOL EKRandomBool();
 NSString *EKRandomName(NSUInteger nameLength);

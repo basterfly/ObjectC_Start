@@ -8,7 +8,12 @@
 
 #import "EKRoom.h"
 
+#import "EKCar.h"
+
 @interface EKCarWashRoom : EKRoom
-@property (nonatomic, retain) NSMutableArray *carsQueue;
+@property (nonatomic, readonly) NSArray *cars;
+
+- (void)addCarToWashRoom:(EKCar *)car;
+- (void)removeCarFromWashRoom:(EKCar *)car;
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45316F0F1ECF43B90028CD0C /* NSString+EKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 45316F0E1ECF43B90028CD0C /* NSString+EKExtension.m */; };
 		458CD4C61EB9FB6F003DE3B8 /* EKWasher.m in Sources */ = {isa = PBXBuildFile; fileRef = 458CD4C51EB9FB6F003DE3B8 /* EKWasher.m */; };
 		458CD4C91EBA4288003DE3B8 /* EKRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 458CD4C81EBA4288003DE3B8 /* EKRoom.m */; };
 		458CD4CC1EBA5440003DE3B8 /* EKAccountant.m in Sources */ = {isa = PBXBuildFile; fileRef = 458CD4CB1EBA5440003DE3B8 /* EKAccountant.m */; };
@@ -39,6 +40,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		45316F0D1ECF43B90028CD0C /* NSString+EKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EKExtension.h"; sourceTree = "<group>"; };
+		45316F0E1ECF43B90028CD0C /* NSString+EKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EKExtension.m"; sourceTree = "<group>"; };
 		458CD4C41EB9FB6F003DE3B8 /* EKWasher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKWasher.h; sourceTree = "<group>"; };
 		458CD4C51EB9FB6F003DE3B8 /* EKWasher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKWasher.m; sourceTree = "<group>"; };
 		458CD4C71EBA4288003DE3B8 /* EKRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKRoom.h; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 				45EA7D741ECD972D002F2474 /* NSObject+EKExtension.m */,
 				45E529581EC48B6B0042E15F /* NSArray+EKBlock.h */,
 				45E529591EC48B6B0042E15F /* NSArray+EKBlock.m */,
+				45316F0D1ECF43B90028CD0C /* NSString+EKExtension.h */,
+				45316F0E1ECF43B90028CD0C /* NSString+EKExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 				458CD4C91EBA4288003DE3B8 /* EKRoom.m in Sources */,
 				45F3627D1EAB517B003CFF39 /* EKCreatureMale.m in Sources */,
 				45C97E911EAA91F00039F373 /* main.m in Sources */,
+				45316F0F1ECF43B90028CD0C /* NSString+EKExtension.m in Sources */,
 				45F78E221EAEA24200E1C849 /* EKRandom.m in Sources */,
 				45F362811EAB51BA003CFF39 /* EKCreatureFemale.m in Sources */,
 				45F78E601EB9DC9E00E1C849 /* EKWorker.m in Sources */,

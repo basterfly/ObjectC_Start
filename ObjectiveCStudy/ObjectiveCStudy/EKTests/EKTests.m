@@ -11,10 +11,12 @@
 #import "EKCreature.h"
 #import "EKCreatureMale.h"
 #import "EKCreatureFemale.h"
-#import "NSObject+EKExtension.h"
 #import "EKRandom.h"
 #import "EKCarWash.h"
 #import "EKCar.h"
+
+#import "NSObject+EKExtension.h"
+#import "NSString+EKExtension.h"
 
 static const NSUInteger EKCount = 5;
 
@@ -52,6 +54,23 @@ static const NSUInteger kEKChildrenCount = 3;
     
     [carWash startWashing];
 
+}
+
++ (void)stringTest {
+    NSLog(@"%@", EKRandomName(7));
+    uint abc = arc4random_uniform(26) + 'a';
+    NSLog(@"abc = %c",abc);
+    
+    NSString *string = @"abcdefghijklmnopqrstuvwxyz";
+    NSString *returnedString = [NSString randomStringFromString:string length:25];
+    NSLog(@"%@", returnedString);
+    
+    NSString *numbers = @"1234567890";
+    NSString *returnedNumbers = [NSString randomStringFromString:numbers length:15];
+    NSLog(@"%@", returnedNumbers);
+    
+    returnedString = [NSString uppercaseRandomString:string length:27];
+    NSLog(@"%@", returnedString);
 }
 
 @end
