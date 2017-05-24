@@ -10,6 +10,6 @@
 
 @interface EKWasher : EKWorker
 
-- (void)washFinished;
+- (void)washCar:(EKCar *)object;
 
 @end

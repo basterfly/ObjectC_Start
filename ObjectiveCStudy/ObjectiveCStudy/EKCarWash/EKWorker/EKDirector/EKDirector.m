@@ -18,9 +18,8 @@
     return 0;
 }
 
-- (void)performSpecificOperationWithObject:(id<EKMoneyTransfer>)accountant {
-    [super processWithObject:accountant];
-    NSLog(@"Director was counted his profit: %lu", self.money);
+- (void)specificOperationsOfObject:(id<EKMoneyTransfer>)accountant {
+    NSLog(@"%@: was counted his profit: %lu", self.name, self.money);
 }
 
 @end

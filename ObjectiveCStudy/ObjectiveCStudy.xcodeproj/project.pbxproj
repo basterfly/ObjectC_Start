@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		45316F0F1ECF43B90028CD0C /* NSString+EKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 45316F0E1ECF43B90028CD0C /* NSString+EKExtension.m */; };
+		4576C16B1ED18B240024F4DC /* NSArray+EKExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4576C16A1ED18B240024F4DC /* NSArray+EKExtensions.m */; };
 		458CD4C61EB9FB6F003DE3B8 /* EKWasher.m in Sources */ = {isa = PBXBuildFile; fileRef = 458CD4C51EB9FB6F003DE3B8 /* EKWasher.m */; };
 		458CD4C91EBA4288003DE3B8 /* EKRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 458CD4C81EBA4288003DE3B8 /* EKRoom.m */; };
 		458CD4CC1EBA5440003DE3B8 /* EKAccountant.m in Sources */ = {isa = PBXBuildFile; fileRef = 458CD4CB1EBA5440003DE3B8 /* EKAccountant.m */; };
 		458CD4CF1EBA5473003DE3B8 /* EKDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 458CD4CE1EBA5473003DE3B8 /* EKDirector.m */; };
 		45C97E911EAA91F00039F373 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C97E901EAA91F00039F373 /* main.m */; };
 		45C97E9A1EAA93990039F373 /* EKCreature.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C97E991EAA93990039F373 /* EKCreature.m */; };
-		45E5295A1EC48B6B0042E15F /* NSArray+EKBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E529591EC48B6B0042E15F /* NSArray+EKBlock.m */; };
 		45EA7D751ECD972D002F2474 /* NSObject+EKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EA7D741ECD972D002F2474 /* NSObject+EKExtension.m */; };
 		45EA7D781ECD9EA9002F2474 /* EKCarWashRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EA7D771ECD9EA9002F2474 /* EKCarWashRoom.m */; };
 		45F3627D1EAB517B003CFF39 /* EKCreatureMale.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F3627C1EAB517B003CFF39 /* EKCreatureMale.m */; };
@@ -42,6 +42,8 @@
 /* Begin PBXFileReference section */
 		45316F0D1ECF43B90028CD0C /* NSString+EKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EKExtension.h"; sourceTree = "<group>"; };
 		45316F0E1ECF43B90028CD0C /* NSString+EKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EKExtension.m"; sourceTree = "<group>"; };
+		4576C1691ED18B240024F4DC /* NSArray+EKExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+EKExtensions.h"; sourceTree = "<group>"; };
+		4576C16A1ED18B240024F4DC /* NSArray+EKExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EKExtensions.m"; sourceTree = "<group>"; };
 		458CD4C41EB9FB6F003DE3B8 /* EKWasher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKWasher.h; sourceTree = "<group>"; };
 		458CD4C51EB9FB6F003DE3B8 /* EKWasher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKWasher.m; sourceTree = "<group>"; };
 		458CD4C71EBA4288003DE3B8 /* EKRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKRoom.h; sourceTree = "<group>"; };
@@ -54,8 +56,6 @@
 		45C97E901EAA91F00039F373 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		45C97E981EAA93990039F373 /* EKCreature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKCreature.h; sourceTree = "<group>"; };
 		45C97E991EAA93990039F373 /* EKCreature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKCreature.m; sourceTree = "<group>"; };
-		45E529581EC48B6B0042E15F /* NSArray+EKBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+EKBlock.h"; sourceTree = "<group>"; };
-		45E529591EC48B6B0042E15F /* NSArray+EKBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EKBlock.m"; sourceTree = "<group>"; };
 		45EA7D731ECD972D002F2474 /* NSObject+EKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EKExtension.h"; sourceTree = "<group>"; };
 		45EA7D741ECD972D002F2474 /* NSObject+EKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EKExtension.m"; sourceTree = "<group>"; };
 		45EA7D761ECD9EA9002F2474 /* EKCarWashRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKCarWashRoom.h; sourceTree = "<group>"; };
@@ -162,8 +162,8 @@
 			children = (
 				45EA7D731ECD972D002F2474 /* NSObject+EKExtension.h */,
 				45EA7D741ECD972D002F2474 /* NSObject+EKExtension.m */,
-				45E529581EC48B6B0042E15F /* NSArray+EKBlock.h */,
-				45E529591EC48B6B0042E15F /* NSArray+EKBlock.m */,
+				4576C1691ED18B240024F4DC /* NSArray+EKExtensions.h */,
+				4576C16A1ED18B240024F4DC /* NSArray+EKExtensions.m */,
 				45316F0D1ECF43B90028CD0C /* NSString+EKExtension.h */,
 				45316F0E1ECF43B90028CD0C /* NSString+EKExtension.m */,
 			);
@@ -323,7 +323,6 @@
 			files = (
 				45F78E471EB280BD00E1C849 /* EKTests.m in Sources */,
 				458CD4CC1EBA5440003DE3B8 /* EKAccountant.m in Sources */,
-				45E5295A1EC48B6B0042E15F /* NSArray+EKBlock.m in Sources */,
 				45C97E9A1EAA93990039F373 /* EKCreature.m in Sources */,
 				45F78E661EB9E03500E1C849 /* EKCar.m in Sources */,
 				45F78E5B1EB9DB8200E1C849 /* EKBuilding.m in Sources */,
@@ -335,6 +334,7 @@
 				45316F0F1ECF43B90028CD0C /* NSString+EKExtension.m in Sources */,
 				45F78E221EAEA24200E1C849 /* EKRandom.m in Sources */,
 				45F362811EAB51BA003CFF39 /* EKCreatureFemale.m in Sources */,
+				4576C16B1ED18B240024F4DC /* NSArray+EKExtensions.m in Sources */,
 				45F78E601EB9DC9E00E1C849 /* EKWorker.m in Sources */,
 				45F78E4B1EB354D300E1C849 /* EKCarWash.m in Sources */,
 				458CD4C61EB9FB6F003DE3B8 /* EKWasher.m in Sources */,

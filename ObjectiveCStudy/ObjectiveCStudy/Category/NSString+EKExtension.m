@@ -10,9 +10,12 @@
 
 #import "EKRandom.h"
 
+static const NSString *EKAlphabet = @"abcdefghijklmnopqrstuvwxyz";
+static const NSString *EKNumeric = @"1234567890";
+
 @implementation NSString (EKExtension)
 
-+ (NSString *)randomStringFromString:(NSString *)string length:(NSUInteger)length {
++ (NSString *)randomStringWithString:(NSString *)string length:(NSUInteger)length {
     NSMutableString *mutableString = [NSMutableString string];
     NSUInteger stringLength = [string length];
     for (NSUInteger index = 0; index < length; index += 1) {
@@ -24,7 +27,21 @@
     return mutableString;
 }
 
-+ (NSString *)uppercaseRandomString:(NSString *)string length:(NSUInteger)length {
-    return [[self randomStringFromString:(NSString *)string length:(NSUInteger)length] uppercaseString];
++ (NSString *)uppercaseRandomStringWithLength:(NSUInteger)length {
+    return [[self randomStringWithString:[[EKAlphabet copy] autorelease] length:(NSUInteger)length] uppercaseString];
+}
+
++ (NSString *)alphabetRandomStringWithLength:(NSUInteger)length {
+    return [self randomStringWithString:[[EKAlphabet copy] autorelease] length:(NSUInteger)length];
+}
+
++ (NSString *)numericRandomStringWithLength:(NSUInteger)length {
+    return [self randomStringWithString:[[EKNumeric copy] autorelease] length:(NSUInteger)length];
+}
+
++ (NSString *)numericAlphabetRandomStringWithLength:(NSUInteger)numericLength charactersLength:(NSUInteger)charactersLength {
+    NSString *numericString = [self randomStringWithString:[[EKNumeric copy] autorelease] length:numericLength];
+    NSString *charactersString = [self randomStringWithString:[[EKAlphabet copy] autorelease] length:charactersLength];
+    return [numericString stringByAppendingString:charactersString];
 }
 @end

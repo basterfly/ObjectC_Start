@@ -1,8 +1,8 @@
 //
-//  NSArray+EKBlock.h
+//  NSArray+EKExtensions.h
 //  ObjectiveCStudy
 //
-//  Created by Egor on 11.05.17.
+//  Created by Egor on 21.05.17.
 //  Copyright © 2017 Yegor Kozlovskiy. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 
 typedef id(^EKFactoryBlock)(void);
 
-@interface NSArray (EKBlock)
+@interface NSArray (EKExtensions)
 
 + (instancetype)objectsWithCount:(NSUInteger)count factoryBlock:(EKFactoryBlock)block;
 

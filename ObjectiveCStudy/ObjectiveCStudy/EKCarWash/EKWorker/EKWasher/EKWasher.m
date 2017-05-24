@@ -12,15 +12,14 @@
 
 @implementation EKWasher
 
-- (void)performSpecificOperationWithObject:(EKCar *)object {
-    NSLog(@"start washing");
-    object.state = EKcarStateClean;
-    [super processWithObject:object];
-    [self washFinished];
+- (void)specificOperationsOfObject:(EKCar *)object {
+    [self washCar:object];
 }
 
-- (void)washFinished {
-    NSLog(@"wash finished, give money %lu", self.money);
+- (void)washCar:(EKCar *)object {
+    NSLog(@"start washing");
+    object.state = EKcarStateClean;
+    NSLog(@"%@: wash finished, give money %lu", self.name, self.money);
 }
 
 @end

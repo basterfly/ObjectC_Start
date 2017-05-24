@@ -48,10 +48,10 @@
     NSLog(@"room was removed");
 }
 
-- (EKWorker *)findWorkerOfClass:(Class)class {
+- (EKWorker *)WorkerOfClass:(Class)cls {
     for (EKRoom *room in self.mutableRooms) {
         for (EKWorker *worker in room.workers) {
-            if ([worker isMemberOfClass:class]) {
+            if ([worker isMemberOfClass:cls]) {
                 return worker;
             }
         }
@@ -60,9 +60,9 @@
     return nil;
 }
 
-- (EKCarWashRoom *)findCarWashRoomOfClass:(Class)class {
+- (EKCarWashRoom *)roomOfClass:(Class)roomClass {
     for (EKCarWashRoom *carWashRoom in self.mutableRooms) {
-        if ([carWashRoom isMemberOfClass:class]) {
+        if ([carWashRoom isMemberOfClass:roomClass]) {
             return carWashRoom;
         }
     }

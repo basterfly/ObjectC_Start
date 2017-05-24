@@ -10,8 +10,10 @@
 
 @interface NSString (EKExtension)
 
-+ (NSString *)randomStringFromString:(NSString *) string length:(NSUInteger) length;
-+ (NSString *)uppercaseRandomString:(NSString *)string length:(NSUInteger)length;
-
++ (NSString *)uppercaseRandomStringWithLength:(NSUInteger)length;
++ (NSString *)alphabetRandomStringWithLength:(NSUInteger)length;
++ (NSString *)numericRandomStringWithLength:(NSUInteger)length;
++ (NSString *)numericAlphabetRandomStringWithLength:(NSUInteger)numericLength
+                                   charactersLength:(NSUInteger)charactersLength;
 
 @end

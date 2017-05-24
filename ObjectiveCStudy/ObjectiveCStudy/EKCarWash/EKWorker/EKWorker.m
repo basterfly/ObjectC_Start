@@ -34,11 +34,12 @@
     return receiveMoney;
 }
 
-- (void)processWithObject:(id<EKMoneyTransfer>)object {
+- (void)processObject:(id<EKMoneyTransfer>)object {
     [self takeMoneyFromObject:object];
+    [self specificOperationsOfObject:object];
 }
 
-- (void)performSpecificOperationWithObject:(id<EKMoneyTransfer>)object {
+- (void)specificOperationsOfObject:(id<EKMoneyTransfer>)object {
     
 }
 

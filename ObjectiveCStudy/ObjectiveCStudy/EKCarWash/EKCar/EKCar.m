@@ -26,10 +26,10 @@ static const NSUInteger EKMoney = 100;
 }
 
 - (NSUInteger)giveMoney {
-    NSUInteger tempMoney = self.money;
+    NSUInteger temporaryMoney = self.money;
     self.money = 0;
     
-    return tempMoney;
+    return temporaryMoney;
 }
 
 @end

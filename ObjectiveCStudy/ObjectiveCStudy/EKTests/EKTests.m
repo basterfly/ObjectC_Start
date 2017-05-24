@@ -19,9 +19,12 @@
 #import "NSString+EKExtension.h"
 
 static const NSUInteger EKCount = 5;
-
 static const NSUInteger kEKCreatureCount = 4;
 static const NSUInteger kEKChildrenCount = 3;
+static const NSUInteger EKNameLength = 7;
+static const NSUInteger EKStringLength = 17;
+static const NSUInteger EKNumbersLength = 5;
+static const NSUInteger EKCharactersLength = 5;
 
 @implementation EKTests
 
@@ -53,23 +56,23 @@ static const NSUInteger kEKChildrenCount = 3;
     }
     
     [carWash startWashing];
-
 }
 
 + (void)stringTest {
-    NSLog(@"%@", EKRandomName(7));
+    NSLog(@"%@", EKRandomName(EKNameLength));
     uint abc = arc4random_uniform(26) + 'a';
     NSLog(@"abc = %c",abc);
     
-    NSString *string = @"abcdefghijklmnopqrstuvwxyz";
-    NSString *returnedString = [NSString randomStringFromString:string length:25];
+    NSString *returnedString = [NSString alphabetRandomStringWithLength:EKStringLength];
     NSLog(@"%@", returnedString);
     
-    NSString *numbers = @"1234567890";
-    NSString *returnedNumbers = [NSString randomStringFromString:numbers length:15];
+    NSString *returnedNumbers = [NSString numericRandomStringWithLength:EKStringLength];
     NSLog(@"%@", returnedNumbers);
     
-    returnedString = [NSString uppercaseRandomString:string length:27];
+    returnedString = [NSString uppercaseRandomStringWithLength:EKStringLength];
+    NSLog(@"%@", returnedString);
+    
+    returnedString = [NSString numericAlphabetRandomStringWithLength:EKNumbersLength charactersLength:EKCharactersLength];
     NSLog(@"%@", returnedString);
 }
 

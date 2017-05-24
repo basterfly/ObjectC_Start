@@ -79,7 +79,7 @@
 
 - (EKWorker *)findEmployeeOfClass:(Class)class {
     for (EKBuilding *building in self.mutableBuildings) {
-        EKWorker *worker = [building findWorkerOfClass:class];
+        EKWorker *worker = [building WorkerOfClass:class]; //employeeOfClass calling!!!!!!!!!!!!!!!!!
         if (worker) {
             return worker;
         }
@@ -90,7 +90,7 @@
 
 - (EKCarWashRoom *)freeCarWashRoom:(Class)class {
     for (EKBuilding *building in self.mutableBuildings) {
-        EKCarWashRoom *carWashRoom = [building findCarWashRoomOfClass:class];
+        EKCarWashRoom *carWashRoom = [building roomOfClass:class];
         if (carWashRoom) {
             return carWashRoom;
         }
@@ -122,7 +122,6 @@
 }
 
 - (void)startWashing {
-    
     EKWorker *washer = [self findEmployeeOfClass:[EKWasher class]];
     EKWorker *accountant = [self findEmployeeOfClass:[EKAccountant class]];
     EKWorker *director = [self findEmployeeOfClass:[EKDirector class]];
@@ -130,10 +129,10 @@
         EKCarWashRoom *carWashRoom = [EKCarWashRoom object];
         carWashRoom = [self freeCarWashRoom:[EKCarWashRoom class]];
         [carWashRoom addCarToWashRoom:car];
-        [washer performSpecificOperationWithObject:car];
+        [washer processObject:car];
         [carWashRoom removeCarFromWashRoom:car];
-        [accountant performSpecificOperationWithObject:washer];
-        [director performSpecificOperationWithObject:accountant];
+        [accountant processObject:washer];
+        [director processObject:accountant];
     }
 }
 

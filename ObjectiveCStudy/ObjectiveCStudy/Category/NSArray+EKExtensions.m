@@ -1,17 +1,17 @@
 //
-//  NSArray+EKBlock.m
+//  NSArray+EKExtensions.m
 //  ObjectiveCStudy
 //
-//  Created by Egor on 11.05.17.
+//  Created by Egor on 21.05.17.
 //  Copyright © 2017 Yegor Kozlovskiy. All rights reserved.
 //
 
-#import "NSArray+EKBlock.h"
+#import "NSArray+EKExtensions.h"
 
-@implementation NSArray (EKBlock)
+@implementation NSArray (EKExtensions)
 
 + (instancetype)objectsWithCount:(NSUInteger)count factoryBlock:(EKFactoryBlock)block {
-    if (nil == block) {
+    if (!block) {
         return nil;
     }
     

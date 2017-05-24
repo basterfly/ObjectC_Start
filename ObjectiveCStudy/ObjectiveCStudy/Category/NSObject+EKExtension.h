@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSArray+EKBlock.h"
+#import "NSArray+EKExtensions.h"
 
 @interface NSObject (EKExtension)
 

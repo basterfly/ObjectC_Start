@@ -21,6 +21,7 @@ int main(int argc, const char * argv[]) {
 //        [EKTests creatureTests];
         [EKTests carWashTests];
 //        [EKTests stringTest];
+        
     }
     
     return 0;
