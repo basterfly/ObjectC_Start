@@ -23,5 +23,15 @@
     return [self arrayWithArray:objects];
 }
 
+- (NSArray *)filteredObjectsWithClass:(Class)cls {
+    NSMutableArray *result = [NSMutableArray array];
+    for (NSObject *object in self) {
+        if ([object isMemberOfClass:cls]) {
+            [result addObject:object];
+        }
+    }
+    
+    return [NSArray arrayWithArray:result];
+}
 
 @end

@@ -15,7 +15,7 @@
 
 - (void)addRoom:(EKRoom *)room;
 - (void)removeRoom:(EKRoom *)room;
-- (EKWorker *)workerOfClass:(Class)cls;
+- (NSArray *)workersOfClass:(Class)cls;
 - (EKCarWashRoom *)roomOfClass:(Class)roomClass;
 
 @end

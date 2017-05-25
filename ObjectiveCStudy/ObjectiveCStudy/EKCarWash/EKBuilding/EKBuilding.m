@@ -8,6 +8,8 @@
 
 #import "EKBuilding.h"
 
+#import "NSArray+EKExtensions.h"
+#import "NSObject+EKExtension.h"
 #import "EKCarWashRoom.h"
 
 @interface EKBuilding ()
@@ -48,16 +50,13 @@
     NSLog(@"room was removed");
 }
 
-- (EKWorker *)workerOfClass:(Class)cls {
+- (NSArray *)workersOfClass:(Class)cls {
+    NSMutableArray *workers = [NSMutableArray object];
     for (EKRoom *room in self.mutableRooms) {
-        for (EKWorker *worker in room.workers) {
-            if ([worker isMemberOfClass:cls]) {
-                return worker;
-            }
-        }
+        [workers addObjectsFromArray:[room.workers filteredObjectsWithClass:cls]];
     }
     
-    return nil;
+    return [NSArray arrayWithArray:workers];
 }
 
 - (EKRoom *)roomOfClass:(Class)roomClass {

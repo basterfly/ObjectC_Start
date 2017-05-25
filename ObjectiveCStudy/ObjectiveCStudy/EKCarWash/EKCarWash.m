@@ -17,6 +17,7 @@
 #import "EKDirector.h"
 
 #import "NSObject+EKExtension.h"
+#import "NSArray+EKExtensions.h"
 
 @interface EKCarWash ()
 @property (nonatomic, retain) NSMutableArray *carsQueue;
@@ -77,15 +78,17 @@
     NSLog(@"building was removed");
 }
 
-- (EKWorker *)findEmployeeOfClass:(Class)class {
+- (NSArray *)findEmployeesOfClass:(Class)class {
+    NSMutableArray *employees = [NSMutableArray object];
     for (EKBuilding *building in self.mutableBuildings) {
-        EKWorker *worker = [building workerOfClass:class]; //employeeOfClass calling!!!!!!!!!!!!!!!!!
-        if (worker) {
-            return worker;
-        }
+        [employees addObjectsFromArray:[building workersOfClass:class]];
     }
     
-    return nil;
+    return [NSArray arrayWithArray:employees];
+}
+
+- (EKWorker *)employeeWithClass:(Class)cls {
+    return [[self findEmployeesOfClass:cls] firstObject];
 }
 
 - (EKCarWashRoom *)freeCarWashRoom:(Class)class {
@@ -122,9 +125,9 @@
 }
 
 - (void)startWashing {
-    EKWorker *washer = [self findEmployeeOfClass:[EKWasher class]];
-    EKWorker *accountant = [self findEmployeeOfClass:[EKAccountant class]];
-    EKWorker *director = [self findEmployeeOfClass:[EKDirector class]];
+    EKWorker *washer = [self employeeWithClass:[EKWasher class]];
+    EKWorker *accountant = [self employeeWithClass:[EKAccountant class]];
+    EKWorker *director = [self employeeWithClass:[EKDirector class]];
     for (EKCar *car in self.carsQueue) {
         EKCarWashRoom *carWashRoom = [EKCarWashRoom object];
         carWashRoom = [self freeCarWashRoom:[EKCarWashRoom class]];

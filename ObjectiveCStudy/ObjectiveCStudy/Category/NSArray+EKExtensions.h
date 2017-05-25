@@ -15,4 +15,6 @@ typedef id(^EKFactoryBlock)(void);
 
 + (instancetype)objectsWithCount:(NSUInteger)count factoryBlock:(EKFactoryBlock)block;
 
+- (NSArray *)filteredObjectsWithClass:(Class)cls;
+
 @end
