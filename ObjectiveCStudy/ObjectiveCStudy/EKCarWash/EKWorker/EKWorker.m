@@ -24,7 +24,11 @@
 }
 
 - (void)takeMoneyFromObject:(id<EKMoneyTransfer> )object {
-    self.money += [object giveMoney];
+    [self takeMoney:[object giveMoney]];
+}
+
+- (void)takeMoney:(NSUInteger)money {
+    self.money += money;
 }
 
 - (NSUInteger)giveMoney {
@@ -35,11 +39,16 @@
 }
 
 - (void)processObject:(id<EKMoneyTransfer>)object {
+    [self startSpecificOperation:object];
     [self takeMoneyFromObject:object];
-    [self specificOperationsOfObject:object];
+    [self finishSpecificOperation];
 }
 
-- (void)specificOperationsOfObject:(id<EKMoneyTransfer>)object {
+- (void)startSpecificOperation:(id<EKMoneyTransfer>)object {
+    
+}
+
+- (void)finishSpecificOperation {
     
 }
 

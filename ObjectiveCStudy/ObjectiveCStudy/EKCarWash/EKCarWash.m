@@ -79,7 +79,7 @@
 
 - (EKWorker *)findEmployeeOfClass:(Class)class {
     for (EKBuilding *building in self.mutableBuildings) {
-        EKWorker *worker = [building WorkerOfClass:class]; //employeeOfClass calling!!!!!!!!!!!!!!!!!
+        EKWorker *worker = [building workerOfClass:class]; //employeeOfClass calling!!!!!!!!!!!!!!!!!
         if (worker) {
             return worker;
         }

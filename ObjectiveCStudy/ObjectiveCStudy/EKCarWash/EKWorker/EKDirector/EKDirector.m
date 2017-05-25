@@ -18,7 +18,11 @@
     return 0;
 }
 
-- (void)specificOperationsOfObject:(id<EKMoneyTransfer>)accountant {
+- (void)startSpecificOperation:(id<EKMoneyTransfer>)accountant {
+    
+}
+
+- (void)finishSpecificOperation {
     NSLog(@"%@: was counted his profit: %lu", self.name, self.money);
 }
 

@@ -10,7 +10,11 @@
 
 @implementation EKAccountant
 
-- (void)specificOperationsOfObject:(id<EKMoneyTransfer>)washer {
+- (void)startSpecificOperation:(id<EKMoneyTransfer>)washer {
+    NSLog(@"%@: I working", self.name);
+}
+
+- (void)finishSpecificOperation {
     NSLog(@"%@: money was counted = %lu", self.name, self.money);
 }
 

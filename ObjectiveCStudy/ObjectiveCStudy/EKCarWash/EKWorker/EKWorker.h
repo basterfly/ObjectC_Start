@@ -17,6 +17,8 @@
 @property (nonatomic, assign)   NSUInteger  experience;
 
 - (void)processObject:(id<EKMoneyTransfer>)object;
-- (void)specificOperationsOfObject:(id<EKMoneyTransfer>)object;
+- (void)startSpecificOperation:(id<EKMoneyTransfer>)object;
+- (void)finishSpecificOperation;
+
 
 @end

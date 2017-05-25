@@ -15,6 +15,8 @@
 
 - (NSUInteger)giveMoney;
 
+- (void)takeMoney:(NSUInteger)money;
+
 @optional
 - (void)takeMoneyFromObject:(id<EKMoneyTransfer>)object;
 
