@@ -11,7 +11,7 @@
 @implementation EKAccountant
 
 - (void)startSpecificOperation:(id<EKMoneyTransfer>)washer {
-    NSLog(@"%@: I working", self.name);
+    NSLog(@"%@: I am working", self.name);
 }
 
 - (void)finishSpecificOperation {

@@ -24,14 +24,17 @@
 }
 
 - (NSArray *)filteredObjectsWithClass:(Class)cls {
-    NSMutableArray *result = [NSMutableArray array];
-    for (NSObject *object in self) {
-        if ([object isMemberOfClass:cls]) {
-            [result addObject:object];
-        }
-    }
-    
-    return [NSArray arrayWithArray:result];
+    return [self filteredArrayWithBlock:^BOOL(id object) {
+        return [object isMemberOfClass:cls];
+    }];
 }
 
+- (NSArray *)filteredArrayWithBlock:(BOOL(^)(id))block {
+    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id object, id bindings) {
+        return block(object);
+    }];
+    
+    return [self filteredArrayUsingPredicate:predicate];
+}
+                                
 @end
