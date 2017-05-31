@@ -24,6 +24,7 @@
 }
 
 - (NSArray *)filteredObjectsWithClass:(Class)cls {
+    
     return [self filteredArrayWithBlock:^BOOL(id object) {
         return [object isMemberOfClass:cls];
     }];
