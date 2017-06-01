@@ -17,12 +17,14 @@
 }
 
 - (void)washCar:(EKCar *)object {
+    self.state = EKworkerStateBusy;
     NSLog(@"%@: start washing", self.name);
     object.state = EKcarStateClean;
 }
 
 - (void)finishSpecificOperation {
     NSLog(@"%@: wash finished, give money %lu", self.name, self.money);
+    self.state = EKworkerStateFree;
 }
 
 @end

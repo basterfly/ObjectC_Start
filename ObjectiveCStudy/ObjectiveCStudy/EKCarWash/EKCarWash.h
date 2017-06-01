@@ -12,10 +12,13 @@
 
 @interface EKCarWash : NSObject
 @property (nonatomic, copy)     NSArray *cars;
-@property (nonatomic, readonly) NSArray *buildings;
+@property (nonatomic, readonly) NSArray *workers;
 
 - (void)addCar:(EKCar *)car;
 - (void)removeCar:(EKCar *)car;
 - (void)startWashing;
+
+//- (void)addWorker:(EKWorker *)worker;
+//- (void)removeWorker:(EKWorker *)worker;
 
 @end

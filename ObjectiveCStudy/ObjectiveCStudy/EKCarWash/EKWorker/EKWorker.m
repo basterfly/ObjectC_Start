@@ -9,8 +9,8 @@
 #import "EKWorker.h"
 
 @interface EKWorker ()
-@property (nonatomic, retain) NSString  *name;
-@property (nonatomic, assign) NSUInteger money;
+@property (nonatomic, retain) NSString      *name;
+@property (nonatomic, assign) NSUInteger    money;
 
 @end
 
@@ -19,6 +19,7 @@
 - (instancetype)init {
     self = [super init];
     self.name = NSStringFromClass([self class]);
+    self.state = EKworkerStateFree;
     
     return self;
 }
