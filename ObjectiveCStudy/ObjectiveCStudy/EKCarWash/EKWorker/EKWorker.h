@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "EKMoneyTransfer.h"
 
+#import "EKObservableObject.h"
+
 typedef NS_ENUM(NSUInteger, EKWorkerState) {
     EKworkerStateFree,
     EKworkerStateBusy
@@ -16,11 +18,10 @@ typedef NS_ENUM(NSUInteger, EKWorkerState) {
 
 @class EKCar;
 
-@interface EKWorker : NSObject <EKMoneyTransfer>
+@interface EKWorker : EKObservableObject <EKMoneyTransfer>
 @property (nonatomic, readonly) NSString    *name;
 @property (nonatomic, assign)   NSUInteger  salary;
-@property (nonatomic, assign)   NSUInteger      experience;
-@property (nonatomic, assign)   EKWorkerState  state;
+@property (nonatomic, assign)   NSUInteger  experience;
 
 - (void)processObject:(id<EKMoneyTransfer>)object;
 - (void)startSpecificOperation:(id<EKMoneyTransfer>)object;
