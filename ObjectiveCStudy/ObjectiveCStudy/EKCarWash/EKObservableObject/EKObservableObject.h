@@ -14,7 +14,7 @@
 
 - (void)addObserver:(id)observer;
 - (void)removeObserver:(id)observer;
-- (void)isObservedByObject:(id)observer;
+- (BOOL)isObservedByObject:(id)observer;
 
 - (SEL)selectorForState:(NSUInteger)state;
 

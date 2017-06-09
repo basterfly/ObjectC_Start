@@ -13,7 +13,8 @@
 
 typedef NS_ENUM(NSUInteger, EKWorkerState) {
     EKworkerStateFree,
-    EKworkerStateBusy
+    EKworkerStateBusy,
+    EKreadyForProcessing
 };
 
 @class EKCar;

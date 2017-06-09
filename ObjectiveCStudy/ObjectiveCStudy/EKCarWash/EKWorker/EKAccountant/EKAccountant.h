@@ -8,11 +8,6 @@
 
 #import "EKWorker.h"
 
-typedef NS_ENUM(NSUInteger, EKAccountantState) {
-    EKAccountantCount,
-    EKAccountantNotCount
-};
-
 @interface EKAccountant : EKWorker
 
 - (void)calculateMoney;

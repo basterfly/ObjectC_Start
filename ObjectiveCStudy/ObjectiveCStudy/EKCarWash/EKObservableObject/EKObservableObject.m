@@ -8,6 +8,8 @@
 
 #import "EKObservableObject.h"
 
+#import "EKAssignReference.h"
+
 @interface EKObservableObject ()
 @property (nonatomic, retain)   NSMutableSet    *mutableObserverSet;
 
@@ -41,12 +43,17 @@
 #pragma Accessors
 
 - (NSSet *)observerSet {
-    return [[self.mutableObserverSet copy] autorelease];
+    NSMutableSet *observerSet = self.mutableObserverSet;
+    NSMutableSet *result = [NSMutableSet setWithCapacity:[observerSet count]];
+    for (EKAssignReference *reference in observerSet) {
+        [result addObject:reference.target];
+    }
+    return [[result copy] autorelease];
 }
 
 - (void)setState:(NSUInteger)state {
     if (state != _state) {
-        state = _state;
+        _state = state;
         [self notifyOfstateChangeWithSelector:[self selectorForState:state]];
     }
 }
@@ -55,20 +62,17 @@
 #pragma mark Public
 
 - (void)addObserver:(id)observer {
-    if (observer) {
-        [self.mutableObserverSet addObject:observer];
+        [self.mutableObserverSet addObject:[EKAssignReference referenceWithTarget:observer]];
         NSLog(@"observer was added");
-    }
-
 }
 
 - (void)removeObserver:(id)observer {
-    [self.mutableObserverSet removeObject:observer];
+    [self.mutableObserverSet removeObject:[EKAssignReference referenceWithTarget:observer]];
     NSLog(@"observer was removed");
 }
 
-- (void)isObservedByObject:(id)observer {
-    /////////////////////////////////////////////
+- (BOOL)isObservedByObject:(id)observer {
+    return [self.mutableObserverSet containsObject:[EKAssignReference referenceWithTarget:observer]];
 }
 
 #pragma mark -
@@ -82,9 +86,9 @@
 
 - (void)notifyOfstateChangeWithSelector:(SEL)selector {
     NSMutableSet *observerSet = self.mutableObserverSet;
-    for (id observer in observerSet) {
-        if ([observer respondsToSelector:selector]) {
-            [observer performSelector:selector withObject:self];
+    for (EKReference *reference in observerSet) {
+        if ([reference.target respondsToSelector:selector]) {
+            [reference.target performSelector:selector withObject:self];
         }
     }
 }

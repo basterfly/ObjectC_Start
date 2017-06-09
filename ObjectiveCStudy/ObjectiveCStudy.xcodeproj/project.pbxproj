@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		4512D6C21EE1FE7C0052060E /* EKObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4512D6C11EE1FE7C0052060E /* EKObservableObject.m */; };
 		45316F0F1ECF43B90028CD0C /* NSString+EKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 45316F0E1ECF43B90028CD0C /* NSString+EKExtension.m */; };
+		4574F4511EEB183400EE886D /* EKReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 4574F4501EEB183400EE886D /* EKReference.m */; };
+		4574F4541EEB186400EE886D /* EKAssignReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 4574F4531EEB186400EE886D /* EKAssignReference.m */; };
+		4574F4571EEB188E00EE886D /* EKCopyReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 4574F4561EEB188E00EE886D /* EKCopyReference.m */; };
+		4574F4601EEB2B3D00EE886D /* EKRetainReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 4574F45F1EEB2B3D00EE886D /* EKRetainReference.m */; };
 		4576C16B1ED18B240024F4DC /* NSArray+EKExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4576C16A1ED18B240024F4DC /* NSArray+EKExtensions.m */; };
 		458CD4C61EB9FB6F003DE3B8 /* EKWasher.m in Sources */ = {isa = PBXBuildFile; fileRef = 458CD4C51EB9FB6F003DE3B8 /* EKWasher.m */; };
 		458CD4CC1EBA5440003DE3B8 /* EKAccountant.m in Sources */ = {isa = PBXBuildFile; fileRef = 458CD4CB1EBA5440003DE3B8 /* EKAccountant.m */; };
@@ -42,6 +46,14 @@
 		4512D6C11EE1FE7C0052060E /* EKObservableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKObservableObject.m; sourceTree = "<group>"; };
 		45316F0D1ECF43B90028CD0C /* NSString+EKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EKExtension.h"; sourceTree = "<group>"; };
 		45316F0E1ECF43B90028CD0C /* NSString+EKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EKExtension.m"; sourceTree = "<group>"; };
+		4574F44F1EEB183400EE886D /* EKReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKReference.h; sourceTree = "<group>"; };
+		4574F4501EEB183400EE886D /* EKReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKReference.m; sourceTree = "<group>"; };
+		4574F4521EEB186400EE886D /* EKAssignReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKAssignReference.h; sourceTree = "<group>"; };
+		4574F4531EEB186400EE886D /* EKAssignReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKAssignReference.m; sourceTree = "<group>"; };
+		4574F4551EEB188E00EE886D /* EKCopyReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKCopyReference.h; sourceTree = "<group>"; };
+		4574F4561EEB188E00EE886D /* EKCopyReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKCopyReference.m; sourceTree = "<group>"; };
+		4574F45E1EEB2B3D00EE886D /* EKRetainReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKRetainReference.h; sourceTree = "<group>"; };
+		4574F45F1EEB2B3D00EE886D /* EKRetainReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKRetainReference.m; sourceTree = "<group>"; };
 		4576C1691ED18B240024F4DC /* NSArray+EKExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+EKExtensions.h"; sourceTree = "<group>"; };
 		4576C16A1ED18B240024F4DC /* NSArray+EKExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EKExtensions.m"; sourceTree = "<group>"; };
 		458CD4C41EB9FB6F003DE3B8 /* EKWasher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKWasher.h; sourceTree = "<group>"; };
@@ -91,6 +103,21 @@
 				4512D6C11EE1FE7C0052060E /* EKObservableObject.m */,
 			);
 			path = EKObservableObject;
+			sourceTree = "<group>";
+		};
+		4574F44E1EEB12C500EE886D /* EKReference */ = {
+			isa = PBXGroup;
+			children = (
+				4574F44F1EEB183400EE886D /* EKReference.h */,
+				4574F4501EEB183400EE886D /* EKReference.m */,
+				4574F4521EEB186400EE886D /* EKAssignReference.h */,
+				4574F4531EEB186400EE886D /* EKAssignReference.m */,
+				4574F4551EEB188E00EE886D /* EKCopyReference.h */,
+				4574F4561EEB188E00EE886D /* EKCopyReference.m */,
+				4574F45E1EEB2B3D00EE886D /* EKRetainReference.h */,
+				4574F45F1EEB2B3D00EE886D /* EKRetainReference.m */,
+			);
+			path = EKReference;
 			sourceTree = "<group>";
 		};
 		45C97E841EAA91F00039F373 = {
@@ -185,6 +212,7 @@
 		45F78E481EB3546700E1C849 /* EKCarWash */ = {
 			isa = PBXGroup;
 			children = (
+				4574F44E1EEB12C500EE886D /* EKReference */,
 				4512D6BF1EE1FD9E0052060E /* EKObservableObject */,
 				45F1B4EC1EC5FF04000F561F /* EKMoneyTransferProtocol */,
 				45F78E621EB9DFED00E1C849 /* EKCar */,
@@ -308,14 +336,18 @@
 				45C97E9A1EAA93990039F373 /* EKCreature.m in Sources */,
 				45F78E661EB9E03500E1C849 /* EKCar.m in Sources */,
 				45EA7D751ECD972D002F2474 /* NSObject+EKExtension.m in Sources */,
+				4574F4571EEB188E00EE886D /* EKCopyReference.m in Sources */,
 				45F3627D1EAB517B003CFF39 /* EKCreatureMale.m in Sources */,
 				45C97E911EAA91F00039F373 /* main.m in Sources */,
+				4574F4601EEB2B3D00EE886D /* EKRetainReference.m in Sources */,
 				45316F0F1ECF43B90028CD0C /* NSString+EKExtension.m in Sources */,
 				45F78E221EAEA24200E1C849 /* EKRandom.m in Sources */,
 				45F362811EAB51BA003CFF39 /* EKCreatureFemale.m in Sources */,
 				4576C16B1ED18B240024F4DC /* NSArray+EKExtensions.m in Sources */,
+				4574F4511EEB183400EE886D /* EKReference.m in Sources */,
 				4512D6C21EE1FE7C0052060E /* EKObservableObject.m in Sources */,
 				45F78E601EB9DC9E00E1C849 /* EKWorker.m in Sources */,
+				4574F4541EEB186400EE886D /* EKAssignReference.m in Sources */,
 				45F78E4B1EB354D300E1C849 /* EKCarWash.m in Sources */,
 				458CD4C61EB9FB6F003DE3B8 /* EKWasher.m in Sources */,
 				458CD4CF1EBA5473003DE3B8 /* EKDirector.m in Sources */,
