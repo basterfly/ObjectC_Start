@@ -39,16 +39,16 @@
 }
 
 - (void)processObject:(id<EKMoneyTransfer>)object {
-    [self startSpecificOperation:object];
+    [self performWorkWithObject:object];
     [self takeMoneyFromObject:object];
-    [self finishSpecificOperation];
+    [self finishWorkWithObject];
 }
 
-- (void)startSpecificOperation:(id<EKMoneyTransfer>)object {
+- (void)performWorkWithObject:(id<EKMoneyTransfer>)object {
     
 }
 
-- (void)finishSpecificOperation {
+- (void)finishWorkWithObject {
     
 }
 

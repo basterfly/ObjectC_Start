@@ -10,4 +10,6 @@
 
 @interface EKAccountant : EKWorker
 
+- (void)calculateMoney;
+
 @end

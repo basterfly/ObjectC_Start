@@ -14,16 +14,21 @@
 
 @implementation EKDirector
 
+- (void)makeProfit {
+    NSLog(@"%@: I am waiting for money from accountant", self.name);
+}
+
 - (NSUInteger)giveMoney {
+    [self doesNotRecognizeSelector:_cmd];
     return 0;
 }
 
-- (void)startSpecificOperation:(id<EKMoneyTransfer>)accountant {
-    
+- (void)performWorkWithObject:(id<EKMoneyTransfer>)accountant {
+    [self makeProfit];
 }
 
-- (void)finishSpecificOperation {
-    NSLog(@"%@: was counted his profit: %lu", self.name, self.money);
+- (void)finishWorkWithObject {
+    NSLog(@"%@: was counted my profit: %lu", self.name, self.money);
 }
 
 @end

@@ -10,4 +10,6 @@
 
 @interface EKDirector : EKWorker
 
+- (void)makeProfit;
+
 @end
