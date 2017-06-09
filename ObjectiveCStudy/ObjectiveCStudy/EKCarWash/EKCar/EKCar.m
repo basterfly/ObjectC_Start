@@ -19,7 +19,6 @@ static const NSUInteger EKMoney = 100;
 
 - (instancetype)init {
     self = [super init];
-//    self.state = EKcarStateDirty;
     self.money = EKMoney;
     
     return self;

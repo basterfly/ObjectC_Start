@@ -15,4 +15,6 @@ typedef NS_ENUM(NSUInteger, EKAccountantState) {
 
 @interface EKAccountant : EKWorker
 
+- (void)calculateMoney;
+
 @end

@@ -19,7 +19,6 @@
 - (instancetype)init {
     self = [super init];
     self.name = NSStringFromClass([self class]);
-    self.state = EKworkerStateFree;
     
     return self;
 }
@@ -40,16 +39,16 @@
 }
 
 - (void)processObject:(id<EKMoneyTransfer>)object {
-    [self startSpecificOperation:object];
+    [self performWorkWithObject:object];
     [self takeMoneyFromObject:object];
-    [self finishSpecificOperation];
+    [self finishWorkWithObject];
 }
 
-- (void)startSpecificOperation:(id<EKMoneyTransfer>)object {
+- (void)performWorkWithObject:(id<EKMoneyTransfer>)object {
     
 }
 
-- (void)finishSpecificOperation {
+- (void)finishWorkWithObject {
     
 }
 
