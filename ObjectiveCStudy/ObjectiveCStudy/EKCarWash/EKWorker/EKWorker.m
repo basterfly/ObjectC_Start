@@ -24,7 +24,7 @@
     return self;
 }
 
-- (void)takeMoneyFromObject:(id<EKMoneyTransfer> )object {
+- (void)takeMoneyFromObject:(id<EKMoneyTransfer>)object {
     [self takeMoney:[object giveMoney]];
 }
 

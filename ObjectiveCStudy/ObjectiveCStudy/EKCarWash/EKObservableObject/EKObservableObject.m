@@ -51,6 +51,26 @@
     }
 }
 
+#pragma mark
+#pragma mark Public
+
+- (void)addObserver:(id)observer {
+    if (observer) {
+        [self.mutableObserverSet addObject:observer];
+        NSLog(@"observer was added");
+    }
+
+}
+
+- (void)removeObserver:(id)observer {
+    [self.mutableObserverSet removeObject:observer];
+    NSLog(@"observer was removed");
+}
+
+- (void)isObservedByObject:(id)observer {
+    /////////////////////////////////////////////
+}
+
 #pragma mark -
 #pragma mark Private
 
