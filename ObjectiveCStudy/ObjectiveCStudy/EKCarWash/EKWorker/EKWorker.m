@@ -52,4 +52,15 @@
     
 }
 
+- (void)notifyForObserver {
+//    notifyOfstateChangeWithSelector
+}
+
+- (void)employeeDidBecomeBusy:(id <EKMoneyTransfer>)worker {
+    
+}
+- (void)employeeDidBecomeFree:(id <EKMoneyTransfer>)worker{
+    
+}
+
 @end

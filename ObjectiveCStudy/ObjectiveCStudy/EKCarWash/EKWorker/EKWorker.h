@@ -11,13 +11,21 @@
 
 #import "EKObservableObject.h"
 
+@class EKCar;
+
 typedef NS_ENUM(NSUInteger, EKWorkerState) {
     EKworkerStateFree,
     EKworkerStateBusy,
     EKreadyForProcessing
 };
 
-@class EKCar;
+@protocol EKEmployeeObserver <NSObject>
+
+@optional
+- (void)employeeDidBecomeBusy:(id <EKMoneyTransfer>)worker;
+- (void)employeeDidBecomeFree:(id <EKMoneyTransfer>)worker;
+
+@end
 
 @interface EKWorker : EKObservableObject <EKMoneyTransfer>
 @property (nonatomic, readonly) NSString    *name;
@@ -27,5 +35,7 @@ typedef NS_ENUM(NSUInteger, EKWorkerState) {
 - (void)processObject:(id<EKMoneyTransfer>)object;
 - (void)performWorkWithObject:(id<EKMoneyTransfer>)object;
 - (void)finishWorkWithObject;
+
+- (void)notifyForObserver;
 
 @end

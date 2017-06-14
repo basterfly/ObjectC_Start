@@ -79,7 +79,7 @@
     return [self.mutableWorkers filteredObjectsWithClass:cls];
 }
 
-- (EKWorker *)employeeWithClass:(Class)cls {
+- (EKWorker *)freeEmployeeWithClass:(Class)cls {
     for (EKWorker *worker in [self workersOfClass:cls]) {
         if (worker.state == EKworkerStateFree) {
             return worker;
@@ -94,16 +94,21 @@
     EKAccountant *accountant = [EKAccountant object];
     EKDirector *director = [EKDirector object];
     
+//    [washer addObserver:carWash];
+    [washer addObserver:accountant];
+    
+    [accountant addObserver:director];
+    
     [self.mutableWorkers addObject:washer];
     [self.mutableWorkers addObject:accountant];
     [self.mutableWorkers addObject:director];
 }
 
 - (void)startWashing {
-    EKWorker *accountant = [self employeeWithClass:[EKAccountant class]];
-    EKWorker *director = [self employeeWithClass:[EKDirector class]];
+    EKWorker *accountant = [self freeEmployeeWithClass:[EKAccountant class]];
+    EKWorker *director = [self freeEmployeeWithClass:[EKDirector class]];
     for (EKCar *car in self.carsQueue) {
-        EKWorker *washer = [self employeeWithClass:[EKWasher class]];
+        EKWorker *washer = [self freeEmployeeWithClass:[EKWasher class]];
         [washer processObject:car];
         [accountant processObject:washer];
         [director processObject:accountant];

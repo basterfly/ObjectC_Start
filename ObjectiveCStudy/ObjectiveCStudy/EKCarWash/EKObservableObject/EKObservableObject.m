@@ -62,8 +62,8 @@
 #pragma mark Public
 
 - (void)addObserver:(id)observer {
-        [self.mutableObserverSet addObject:[EKAssignReference referenceWithTarget:observer]];
-        NSLog(@"observer was added");
+    [self.mutableObserverSet addObject:[EKAssignReference referenceWithTarget:observer]];
+    NSLog(@"observer was added");
 }
 
 - (void)removeObserver:(id)observer {
@@ -78,6 +78,7 @@
 #pragma mark -
 #pragma mark Private
 
+//This method is intended for subclassing. Never call it directly.
 - (SEL)selectorForState:(NSUInteger)state {
     [self doesNotRecognizeSelector:_cmd];
     
