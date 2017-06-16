@@ -39,9 +39,16 @@
 }
 
 - (void)processObject:(id<EKMoneyTransfer>)object {
+    self.state = EKworkerStateBusy;
+    NSLog(@"%@: State Busy", self.name);
     [self performWorkWithObject:object];
+    
     [self takeMoneyFromObject:object];
     [self finishWorkWithObject];
+    
+    self.state = EKworkerStateFree;
+//    self.state = EKworkerReadyForProcessing;
+    NSLog(@"%@: State Free", self.name);
 }
 
 - (void)performWorkWithObject:(id<EKMoneyTransfer>)object {
@@ -56,11 +63,11 @@
 //    notifyOfstateChangeWithSelector
 }
 
-- (void)employeeDidBecomeBusy:(id <EKMoneyTransfer>)worker {
-    
+- (void)employeeDidFinishWork:(id <EKMoneyTransfer>)worker {    //employeeDidBecomeBusy
+    [self processObject:worker];
 }
 - (void)employeeDidBecomeFree:(id <EKMoneyTransfer>)worker{
-    
+    NSLog(@"%@ - employeeDidBecomeFree", self.name);
 }
 
 @end

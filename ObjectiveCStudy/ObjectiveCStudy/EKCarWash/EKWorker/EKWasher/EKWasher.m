@@ -24,7 +24,7 @@
 
 - (void)finishWorkWithObject {
     NSLog(@"%@: wash finished, give money %lu", self.name, self.money);
-    self.state = EKworkerStateFree;
+//    self.state = EKworkerStateFree;
 }
 
 @end

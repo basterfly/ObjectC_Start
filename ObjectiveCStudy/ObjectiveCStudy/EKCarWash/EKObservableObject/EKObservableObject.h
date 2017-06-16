@@ -15,6 +15,7 @@
 - (void)addObserver:(id)observer;
 - (void)removeObserver:(id)observer;
 - (BOOL)isObservedByObject:(id)observer;
+- (void)notifyOfstate:(NSUInteger)state;
 
 //This method is intended for subclassing. Never call it directly.
 - (SEL)selectorForState:(NSUInteger)state;

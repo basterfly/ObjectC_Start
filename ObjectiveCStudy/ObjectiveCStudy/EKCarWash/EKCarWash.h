@@ -18,7 +18,4 @@
 - (void)removeCar:(EKCar *)car;
 - (void)startWashing;
 
-//- (void)addWorker:(EKWorker *)worker;
-//- (void)removeWorker:(EKWorker *)worker;
-
 @end

@@ -16,14 +16,15 @@
 typedef NS_ENUM(NSUInteger, EKWorkerState) {
     EKworkerStateFree,
     EKworkerStateBusy,
-    EKreadyForProcessing
+    EKworkerReadyForProcessing
 };
 
 @protocol EKEmployeeObserver <NSObject>
 
 @optional
-- (void)employeeDidBecomeBusy:(id <EKMoneyTransfer>)worker;
+- (void)employeeDidFinishWork:(id <EKMoneyTransfer>)worker; //employeeDidBecomeBusy
 - (void)employeeDidBecomeFree:(id <EKMoneyTransfer>)worker;
+- (void)employeeReadyForProcessing:(id <EKMoneyTransfer>)worker;
 
 @end
 

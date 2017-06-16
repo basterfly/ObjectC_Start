@@ -16,9 +16,13 @@
 #import "NSObject+EKExtension.h"
 #import "NSArray+EKExtensions.h"
 
+static const NSUInteger EKCountOfWashers = 3;
+
 @interface EKCarWash ()
-@property (nonatomic, retain) NSMutableArray *carsQueue;
-@property (nonatomic, retain) NSMutableArray *mutableWorkers;
+@property (nonatomic, retain)   NSMutableArray  *carsQueue;
+@property (nonatomic, retain)   NSMutableArray  *washers;
+@property (nonatomic, retain)   EKAccountant    *accountant;
+@property (nonatomic, retain)   EKDirector      *director;
 
 @end
 
@@ -32,13 +36,13 @@
 }
 
 - (NSArray *)workers {
-    return [[self.mutableWorkers copy] autorelease];
+    return [[self.washers copy] autorelease];
 }
 
 - (instancetype)init {
     self = [super init];
     self.carsQueue = [NSMutableArray array];
-    self.mutableWorkers = [NSMutableArray array];
+    self.washers = [NSMutableArray object];
     [self setupCarWashHierarchy];
     
     return self;
@@ -46,7 +50,9 @@
 
 - (void)dealloc {
     self.carsQueue = nil;
-    self.mutableWorkers = nil;
+    self.washers = nil;
+    self.accountant = nil;
+    self.director = nil;
     
     [super dealloc];
 }
@@ -65,18 +71,18 @@
 
 - (void)addWorker:(EKWorker *)worker {
     if (worker) {
-        [self.mutableWorkers addObject:worker];
+        [self.washers addObject:worker];
         NSLog(@"worker was added"); //, room capacity = %lu", self.roomCapacity
     }
 }
 
 - (void)removeWorker:(EKWorker *)worker {
-    [self.mutableWorkers removeObject:worker];
+    [self.washers removeObject:worker];
     NSLog(@"worker was removed");
 }
 
 - (NSArray *)workersOfClass:(Class)cls {
-    return [self.mutableWorkers filteredObjectsWithClass:cls];
+    return [self.washers filteredObjectsWithClass:cls];
 }
 
 - (EKWorker *)freeEmployeeWithClass:(Class)cls {
@@ -90,29 +96,40 @@
 }
 
 - (void)setupCarWashHierarchy {
-    EKWasher *washer = [EKWasher object];
-    EKAccountant *accountant = [EKAccountant object];
-    EKDirector *director = [EKDirector object];
+    [self.washers addObjectsFromArray:[EKWasher objectsWithCount:EKCountOfWashers]];
+    self.accountant = [EKAccountant object];
+    self.director = [EKDirector object];
     
-//    [washer addObserver:carWash];
-    [washer addObserver:accountant];
+    for (EKWasher *washer in self.washers) {
+        [washer addObserver:self.accountant];
+        [washer addObserver:self];
+    }
     
-    [accountant addObserver:director];
-    
-    [self.mutableWorkers addObject:washer];
-    [self.mutableWorkers addObject:accountant];
-    [self.mutableWorkers addObject:director];
+    [self.accountant addObserver:self.director];
 }
 
 - (void)startWashing {
-    EKWorker *accountant = [self freeEmployeeWithClass:[EKAccountant class]];
-    EKWorker *director = [self freeEmployeeWithClass:[EKDirector class]];
     for (EKCar *car in self.carsQueue) {
         EKWorker *washer = [self freeEmployeeWithClass:[EKWasher class]];
-        [washer processObject:car];
-        [accountant processObject:washer];
-        [director processObject:accountant];
+        if (washer) {
+            [washer processObject:car];
+        } else {
+            [self.carsQueue addObject:car];
+        }
+        
+        [self.accountant processObject:washer];
+        [self.director processObject:self.accountant];  ///////////////////////???????????????
     }
 }
 
+- (void)employeeDidFinishWork:(id)employee {
+    if (self.carsQueue.count > 0) {
+        EKCar *car = [[[self.carsQueue firstObject] retain] autorelease];
+        [self.carsQueue removeObject:car];  //2 times self.carsQueue
+        [employee processObject:car];
+    }
+}
+- (void)employeeDidBecomeBusy:(id)employee {
+    NSLog(@"become busy: %@", employee);
+}
 @end

@@ -54,7 +54,7 @@
 - (void)setState:(NSUInteger)state {
     if (state != _state) {
         _state = state;
-        [self notifyOfstateChangeWithSelector:[self selectorForState:state]];
+        [self notifyOfstate:state];
     }
 }
 
@@ -75,12 +75,16 @@
     return [self.mutableObserverSet containsObject:[EKAssignReference referenceWithTarget:observer]];
 }
 
+- (void)notifyOfstate:(NSUInteger)state {
+    [self notifyOfstateChangeWithSelector:[self selectorForState:state]];
+}
+
 #pragma mark -
 #pragma mark Private
 
 //This method is intended for subclassing. Never call it directly.
 - (SEL)selectorForState:(NSUInteger)state {
-    [self doesNotRecognizeSelector:_cmd];
+//    [self doesNotRecognizeSelector:_cmd];
     
     return NULL;
 }
